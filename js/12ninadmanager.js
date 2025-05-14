@@ -207,4 +207,4 @@ setInterval (() => {
       iframes[i].src = urls[r];
     }
   });
-}, 500000);
+}, 10000);
