@@ -205,4 +205,4 @@ setInterval (() => {
     for(i = 0; i < iframes.length; i++) {
       iframes[i].src = urls[r];
     }
-}, 10000);
+}, 500000);
