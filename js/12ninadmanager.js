@@ -103,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 setInterval (() => {
-    document.addEventListener("DOMContentLoaded", () => {
     urls = [
         'https://sakitibi.github.io/12ninadmanager.com/SuperNewRoles-Logo',
         'https://sakitibi.github.io/12ninadmanager.com/12ninad-1',
@@ -206,5 +205,4 @@ setInterval (() => {
     for(i = 0; i < iframes.length; i++) {
       iframes[i].src = urls[r];
     }
-  });
 }, 10000);
