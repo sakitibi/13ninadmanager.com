@@ -1,3 +1,5 @@
+let srcrandom = Math.floor(Math.random() * 2);
+let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
 
@@ -6,6 +8,9 @@ const url = new URL(window.location.href);
 
 // 条件に応じて ad パラメータを設定
 if (random === 10) {
+    if(srcrandom === 1){
+	srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
+    }
     url.searchParams.set("ad", "google_vignette");
 } else {
     url.searchParams.set("ad", "none");
@@ -24,7 +29,7 @@ function playAdVideo() {
 
 	const iframe = document.createElement("iframe");
 	iframe.id = "adVideo";
-	iframe.src = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
+	iframe.src = srcs;
 	iframe.style.position = "fixed";
 	iframe.style.top = "0";
 	iframe.style.left = "0";
