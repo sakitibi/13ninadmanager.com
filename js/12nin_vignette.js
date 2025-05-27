@@ -12,8 +12,6 @@ if (random === 10) {
 	srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
     }
     url.searchParams.set("ad", "google_vignette");
-} else {
-    url.searchParams.set("ad", "none");
 }
 
 // 履歴を書き換えてURLを更新（リロードなしで）
