@@ -1,4 +1,4 @@
-let srcrandom = Math.floor(Math.random() * 2);
+let srcrandom = Math.floor(Math.random() * 3);
 let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
@@ -10,6 +10,8 @@ const url = new URL(window.location.href);
 if (random === 10) {
     if(srcrandom === 1){
 	srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
+    } else if(srcrandom === 2){
+	srcs = "https://www.youtube.com/embed/04EmFj46LJc?autoplay=1&controls=0";
     }
     url.searchParams.set("ad", "google_vignette");
 }
