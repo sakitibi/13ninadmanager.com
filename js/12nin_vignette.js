@@ -60,7 +60,7 @@ function playAdVideo() {
 	let SkipCound = setInterval(() => {
             if(SkipCoundDown > 0){
                 SkipCoundDown -= 1;
-                skip.textContent = `スキップ あと${CoundDown}秒`;
+                skip.textContent = `スキップ あと${SkipCoundDown}秒`;
             } else {
                 skip.disabled = false;
                 skip.textContent = "スキップ";
