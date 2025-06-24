@@ -43,14 +43,14 @@ function playAdVideo() {
 
 	const skip = document.createElement("button");
 	skip.id = "skipAdButton";
-	skip.textContent = "スキップ";
+	skip.disabled = true;
+	skip.textContent = `スキップ あと${SkipCoundDown}秒`;
 	skip.style.position = "fixed";
 	skip.style.bottom = "20px";
 	skip.style.right = "20px";
 	skip.style.padding = "10px 20px";
 	skip.style.fontSize = "18px";
 	skip.style.zIndex = "10000";
-	skip.disabled = true;
 	skip.onclick = () => {
 		iframe.remove();
 		skip.remove();
