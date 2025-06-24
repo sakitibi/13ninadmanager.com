@@ -2,6 +2,7 @@ let srcrandom = Math.floor(Math.random() * 3);
 let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
+let SkipCoundDown = 6;
 
 // URLオブジェクトを現在のURLから作成
 const url = new URL(window.location.href);
@@ -49,12 +50,24 @@ function playAdVideo() {
 	skip.style.padding = "10px 20px";
 	skip.style.fontSize = "18px";
 	skip.style.zIndex = "10000";
+	skip.disabled = true;
 	skip.onclick = () => {
 		iframe.remove();
 		skip.remove();
 		isAdPlaying = false;
 	};
 	document.body.appendChild(skip);
+	let SkipCound = setInterval(() => {
+            if(SkipCoundDown > 0){
+                SkipCoundDown -= 1;
+                skip.textContent = `スキップ あと${CoundDown}秒`;
+            } else {
+                skip.disabled = false;
+                skip.textContent = "スキップ";
+                clearInterval(SkipCoundDown);
+		SkipCound = null;
+            }
+	}, 1000);
 }
 
 // 条件に応じて処理を実行
