@@ -1,4 +1,4 @@
-let srcrandom = Math.floor(Math.random() * 3);
+let srcrandom = Math.floor(Math.random() * 4);
 let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
@@ -9,12 +9,14 @@ const url = new URL(window.location.href);
 
 // 条件に応じて ad パラメータを設定
 if (random === 10) {
-    if(srcrandom === 1){
-	srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
-    } else if(srcrandom === 2){
-	srcs = "https://www.youtube.com/embed/04EmFj46LJc?autoplay=1&controls=0";
-    }
     url.searchParams.set("ad", "google_vignette");
+}
+if(srcrandom === 1){
+    srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
+} else if(srcrandom === 2){
+    srcs = "https://www.youtube.com/embed/JQCGXDr5bd4?autoplay=1&controls=0";
+} else if(srcrandom === 3){
+    srcs = "https://www.youtube.com/embed/Arn-LtWbKxg?autoplay=1&controls=0"l
 }
 
 // 履歴を書き換えてURLを更新（リロードなしで）
