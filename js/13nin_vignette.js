@@ -1,4 +1,4 @@
-let srcrandom = Math.floor(Math.random() * 4);
+let srcrandom = Math.floor(Math.random() * 5);
 let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
@@ -17,6 +17,8 @@ if(srcrandom === 1){
     srcs = "https://www.youtube.com/embed/JQCGXDr5bd4?autoplay=1&controls=0";
 } else if(srcrandom === 3){
     srcs = "https://www.youtube.com/embed/Arn-LtWbKxg?autoplay=1&controls=0";
+} else if(srcrandom === 4){
+    srcs = "https://www.youtube.com/embed/12Xx5ZP-Vfo?autoplay=1&controls=0";
 }
 
 // 履歴を書き換えてURLを更新（リロードなしで）
