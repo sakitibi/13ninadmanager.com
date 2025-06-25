@@ -16,7 +16,7 @@ if(srcrandom === 1){
 } else if(srcrandom === 2){
     srcs = "https://www.youtube.com/embed/JQCGXDr5bd4?autoplay=1&controls=0";
 } else if(srcrandom === 3){
-    srcs = "https://www.youtube.com/embed/Arn-LtWbKxg?autoplay=1&controls=0"l
+    srcs = "https://www.youtube.com/embed/Arn-LtWbKxg?autoplay=1&controls=0";
 }
 
 // 履歴を書き換えてURLを更新（リロードなしで）
