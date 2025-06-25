@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         'https://sin.creativecdn.com/imp-delivery?tk=9An9eHzcc1iLf8kfB3NLgCdMHPE_fFs1WZqw1cc53GrcNBFbXL63odW3JUMYk1WsnCSD_4akg5T-zirRMlFRSecK6tQRrE1wXEHWMqQu6PrdYNS1_kWWSBPWHggKcb0xrDG_LeCv8os-AEPnACN7G3o3-f0ZhlSNfIfCTrF1Nt5VAslvmoqLE4YPV8IgIyTd_fFC285ydlfdnVkq2otF25vW4u2sopeoL9juyFyqZXDaxDZNF8K8WBYbA0wtyTvt_vw2t_4j40ELqfzys1IKrsBTwvDbDrKjNWn9HJtO2XXVlU6-z-2vZ1Lc5ig4ZL9m3hoC0R-NiEsIlHzk39-ELvH7JLFw6QUXyzsyJ3Nh6gkGz1okJctrw6Xrlk6sMi-P_zV7Evxmabe_nO4UkiAcx3uqVBT_sb2AZjoEDtrqrmt9uQCLaD7nb73Oa96oevI0qrm4rTdt6gMGLH4F-OBIQw&curl=https%3A%2F%2Fsin.creativecdn.com%2Fclicks%3F%7BEXTRA_CLICK_PARAMS%7D&tdc=sin'
   ];
   var r = Math.floor(Math.random() * urls.length);  
-  var iframes = document.getElementsByClassName('juunininadmanager');
+  var iframes = document.getElementsByClassName('juusannninadmanager');
   
   if (urls.length === 0) {
     console.error('URL配列が空です。');
@@ -148,7 +148,7 @@ setInterval (() => {
         'https://sin.creativecdn.com/imp-delivery?tk=9An9eHzcc1iLf8kfB3NLgCdMHPE_fFs1WZqw1cc53GrcNBFbXL63odW3JUMYk1WsnCSD_4akg5T-zirRMlFRSecK6tQRrE1wXEHWMqQu6PrdYNS1_kWWSBPWHggKcb0xrDG_LeCv8os-AEPnACN7G3o3-f0ZhlSNfIfCTrF1Nt5VAslvmoqLE4YPV8IgIyTd_fFC285ydlfdnVkq2otF25vW4u2sopeoL9juyFyqZXDaxDZNF8K8WBYbA0wtyTvt_vw2t_4j40ELqfzys1IKrsBTwvDbDrKjNWn9HJtO2XXVlU6-z-2vZ1Lc5ig4ZL9m3hoC0R-NiEsIlHzk39-ELvH7JLFw6QUXyzsyJ3Nh6gkGz1okJctrw6Xrlk6sMi-P_zV7Evxmabe_nO4UkiAcx3uqVBT_sb2AZjoEDtrqrmt9uQCLaD7nb73Oa96oevI0qrm4rTdt6gMGLH4F-OBIQw&curl=https%3A%2F%2Fsin.creativecdn.com%2Fclicks%3F%7BEXTRA_CLICK_PARAMS%7D&tdc=sin'
     ];
     r = Math.floor(Math.random() * urls.length);  
-    iframes = document.getElementsByClassName('juunininadmanager');
+    iframes = document.getElementsByClassName('juusannninadmanager');
     
     if (urls.length === 0) {
       console.error('URL配列が空です。');
