@@ -38,15 +38,13 @@
         const linkURL = "https://youtube.be/12Xx5ZP-Vfo";
         let Message = document.getElementById('message');
         linkButton.addEventListener('click', function(){
+            Message.innerHTML = (`
+                <p>拡散ご協力ありがとうございます!</p>
+                <p>間も無く配信ページに飛びます</p>
+            `);
             setTimeout(() => {
-                Message.innerHTML = (`
-                    <p>拡散ご協力ありがとうございます!</p>
-                    <p>間も無く配信ページに飛びます</p>
-                `);
-                setTimeout(() => {
-                    window.open(linkURL, '_blank');
-                }, 4000);
-            }, 1000);
+                window.open(linkURL, '_blank');
+            }, 5000);
         })
     </script>
 </body>
