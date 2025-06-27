@@ -103,12 +103,10 @@ if (ad === 'google_vignette') {
 }
 
 setInterval(() => {
-    if(skip){
-	if(SkipCoundDown > 0){
-	    skip.disabled = true;
-	} else {
-	    skip.disabled = false;
-	}
+    if(SkipCoundDown > 0){
+	skip.disabled = true;
+    } else {
+	skip.disabled = false;
     }
 }, 50);
 
