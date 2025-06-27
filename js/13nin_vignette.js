@@ -103,6 +103,16 @@ if (ad === 'google_vignette') {
 }
 
 setInterval(() => {
+    if(skip){
+	if(SkipCoundDown > 0){
+	    skip.disabled = true;
+	} else {
+	    skip.disabled = false;
+	}
+    }
+}, 50);
+
+setInterval(() => {
     if(SkipCoundDown <= 0){
 	random = Math.floor(Math.random() * 11);
     	srcrandom = Math.floor(Math.random() * 5);
@@ -112,12 +122,29 @@ setInterval(() => {
 	}
 	if(srcrandom === 1){
 	    srcs = "https://www.youtube.com/embed/Eh3cJyXCmBU?autoplay=1&controls=0";
+	    if(AdPattern === 1){
+		SkipCoundDown = 483;
+	    }
 	} else if(srcrandom === 2){
 	    srcs = "https://www.youtube.com/embed/JQCGXDr5bd4?autoplay=1&controls=0";
+	    if(AdPattern === 1){
+		SkipCoundDown = 735;
+	    }
 	} else if(srcrandom === 3){
 	    srcs = "https://www.youtube.com/embed/Arn-LtWbKxg?autoplay=1&controls=0";
+	    if(AdPattern === 1){
+		SkipCoundDown = 934;
+	    }
 	} else if(srcrandom === 4){
 	    srcs = "https://www.youtube.com/embed/OaLgiEOYQqs?autoplay=1&controls=0";
+	    if(AdPattern === 1){
+		SkipCoundDown = 1028;
+	    }
+	} else if(srcrandom === 5){
+	    srcs = "https://www.youtube.com/embed/_LhLyW4Yk-M?autoplay=1&controls=0";
+	    if(AdPattern === 1){
+		SkipCoundDown = 32;
+	    }
 	}
 	
 	// 履歴を書き換えてURLを更新（リロードなしで）
