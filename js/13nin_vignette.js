@@ -3,7 +3,7 @@ let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
 let SkipCoundDown = 6;
-let AdPattern = Math.floor(Math.random() * 1);
+let AdPattern = Math.floor(Math.random() * 2);
 
 // URLオブジェクトを現在のURLから作成
 const url = new URL(window.location.href);
