@@ -103,10 +103,12 @@ if (ad === 'google_vignette') {
 }
 
 setInterval(() => {
-    if(SkipCoundDown > 0){
-	document.getElementById("skipAdButton").setAttribute("disabled", "true");
-    } else {
-	document.getElementById("skipAdButton").removeAttribute("disabled");
+    if(document.getElementById("skipAdButton")){
+	if(SkipCoundDown > 0){
+	    document.getElementById("skipAdButton").setAttribute("disabled", "true");
+	} else {
+	    document.getElementById("skipAdButton").removeAttribute("disabled");
+	}
     }
 }, 50);
 
