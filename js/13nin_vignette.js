@@ -104,9 +104,9 @@ if (ad === 'google_vignette') {
 
 setInterval(() => {
     if(SkipCoundDown > 0){
-	skip.disabled = true;
+	document.getElementById("skipAdButton").setAttribute("disabled", "true");
     } else {
-	skip.disabled = false;
+	document.getElementById("skipAdButton").removeAttribute("disabled");
     }
 }, 50);
 
