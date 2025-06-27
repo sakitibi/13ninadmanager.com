@@ -1,4 +1,4 @@
-let srcrandom = Math.floor(Math.random() * 6);
+let srcrandom = Math.floor(Math.random() * 7);
 let srcs = "https://www.youtube.com/embed/S7O5-dFA420?autoplay=1&controls=0";
 let random = Math.floor(Math.random() * 11);
 let isAdPlaying = false;
@@ -42,6 +42,9 @@ if(srcrandom === 1){
     if(AdPattern === 1){
 	SkipCoundDown = 32;
     }
+} else if(srcrandom === 6){
+    srcs = "https://www.youtube.com/embed/Zh2W2fcRBT4?autoplay=1&controls=0";
+    SkipCoundDown = 6;
 }
 
 // 履歴を書き換えてURLを更新（リロードなしで）
@@ -88,6 +91,12 @@ function playAdVideo() {
             if(SkipCoundDown > 0){
                 SkipCoundDown -= 1;
                 skip.textContent = `スキップ あと${SkipCoundDown}秒`;
+		if(SkipCoundDown < 1){
+		    skip.disabled = false;
+	            skip.textContent = "スキップ";
+	            clearInterval(SkipCoundDown);
+		    SkipCound = null;
+		}
             } else {
                 skip.disabled = false;
                 skip.textContent = "スキップ";
