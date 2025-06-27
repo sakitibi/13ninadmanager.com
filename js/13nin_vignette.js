@@ -125,6 +125,8 @@ setInterval(() => {
     if(SkipCoundDown <= 0){
 	random = Math.floor(Math.random() * 11);
     	srcrandom = Math.floor(Math.random() * 5);
+	SkipCoundDown = 6;
+	AdPattern = Math.floor(Math.random() * 2);
     	// 条件に応じて ad パラメータを設定
 	if (random === 10) {
 	    url.searchParams.set("ad", "google_vignette");
