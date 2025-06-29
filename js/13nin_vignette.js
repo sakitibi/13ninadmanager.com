@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         13nin_vignette＋復元ガード
+// @name         13nin_vignette＋復元ガード (修正版)
 // @namespace    http://tampermonkey.net/
-// @version      1.1
-// @description  動的広告表示＋要素復元ガード
+// @version      1.1.1
+// @description  動的広告表示＋要素復元ガード（スキップ制御バグ修正）
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -11,17 +11,17 @@
   'use strict';
 
   //───── 1. 初期化 ─────
-  let isAdPlaying    = false;
-  let adData         = {};
-  const url          = new URL(location.href);
-  const selects      = [
-    { src: "S7O5-dFA420", base: 6, pat1:6 },
-    { src: "Eh3cJyXCmBU", base: 483, pat1:483 },
-    { src: "JQCGXDr5bd4", base: 735, pat1:735 },
-    { src: "Arn-LtWbKxg", base: 934, pat1:934 },
+  let isAdPlaying = false;
+  let adData       = {};
+  const url        = new URL(location.href);
+  const selects    = [
+    { src: "S7O5-dFA420", base: 6,    pat1: 6   },
+    { src: "Eh3cJyXCmBU", base: 483,  pat1: 483 },
+    { src: "JQCGXDr5bd4", base: 735,  pat1: 735 },
+    { src: "Arn-LtWbKxg", base: 934,  pat1: 934 },
     { src: "OaLgiEOYQqs", base:1028, pat1:1028 },
-    { src: "_LhLyW4Yk-M", base:  32, pat1: 32 },
-    { src: "Zh2W2fcRBT4", base:   6, pat1:  6 },
+    { src: "_LhLyW4Yk-M", base: 32,   pat1: 32  },
+    { src: "Zh2W2fcRBT4", base: 6,    pat1: 6   },
   ];
 
   window.blockAdBlock = false;
@@ -31,22 +31,21 @@
 
   //───── 2. 広告データをランダム設定 ─────
   function pickAd() {
-    const rndPattern  = Math.random() < 0.5 ? 1 : 0;  // 0 or 1
-    const rndAdParam  = (Math.floor(Math.random() * 11) === 10);
-    const choice      = selects[Math.floor(Math.random() * selects.length)];
+    const rndPattern = Math.random() < 0.5 ? 1 : 0;
+    const rndAdParam = (Math.floor(Math.random() * 11) === 10);
+    const choice     = selects[Math.floor(Math.random() * selects.length)];
 
-    adData.src        = `https://www.youtube.com/embed/${choice.src}?autoplay=1&controls=0`;
-    adData.skipCount  = rndPattern ? choice.pat1 : choice.base;
-    adData.adFlag     = rndAdParam;
-    adData.pattern    = rndPattern;
+    adData.src       = `https://www.youtube.com/embed/${choice.src}?autoplay=1&controls=0`;
+    adData.skipCount = rndPattern ? choice.pat1 : choice.base;
+    adData.adFlag    = rndAdParam;
+    adData.pattern   = rndPattern;
   }
-
   pickAd();
 
   if (adData.adFlag) {
     url.searchParams.set("ad", "google_vignette");
+    history.replaceState({}, '', url);
   }
-  history.replaceState({}, '', url);
 
   //───── 3. 広告再生関数 ─────
   function playAdVideo() {
@@ -55,12 +54,12 @@
 
     // iframe 作成
     const iframe = document.createElement("iframe");
-    iframe.id     = "adVideo";
-    iframe.src    = adData.src;
+    iframe.id    = "adVideo";
+    iframe.src   = adData.src;
     Object.assign(iframe.style, {
-      position: "fixed", top:0, left:0,
-      width:"100vw", height:"100vh",
-      zIndex:9999
+      position: "fixed", top: 0, left: 0,
+      width:    "100vw", height:"100vh",
+      zIndex:   9999
     });
     iframe.allow = "autoplay";
     document.body.appendChild(iframe);
@@ -72,7 +71,7 @@
     skip.textContent = `スキップ あと${adData.skipCount}秒`;
     Object.assign(skip.style, {
       position:"fixed", bottom:"20px", right:"20px",
-      padding:"10px 20px", fontSize:"18px", zIndex:10000
+      padding: "10px 20px", fontSize:"18px", zIndex:10000
     });
     skip.addEventListener("click", () => {
       iframe.remove();
@@ -81,12 +80,12 @@
     });
     document.body.appendChild(skip);
 
-    // カウントダウン
+    // カウントダウン（0秒も表示）
     let counter = adData.skipCount;
     const timer = setInterval(() => {
-      counter--;
-      if (counter > 0) {
+      if (counter >= 0) {
         skip.textContent = `スキップ あと${counter}秒`;
+        counter--;
       } else {
         clearInterval(timer);
         skip.disabled   = false;
@@ -100,7 +99,6 @@
     playAdVideo();
   }
   setInterval(() => {
-    // 再ピック＋URL更新＋実行判定
     pickAd();
     if (adData.adFlag) {
       url.searchParams.set("ad", "google_vignette");
@@ -116,7 +114,6 @@
     buttonNode: null
   };
 
-  // 広告出現時にキャッシュするヘルパー
   function cacheNodes() {
     const iframe = document.getElementById("adVideo");
     const btn    = document.getElementById("skipAdButton");
@@ -127,13 +124,9 @@
     }
   }
 
-  // ページ全体を監視
   const observer = new MutationObserver(muts => {
     muts.forEach(m => {
-      // 新しい iframe/button が出たらキャッシュ
       if (m.addedNodes.length) cacheNodes();
-
-      // 削除されたら復元
       m.removedNodes.forEach(n => {
         if (n.id === "adVideo" && cache.iframeNode) {
           cache.videoButtonParent.appendChild(cache.iframeNode.cloneNode(true));
@@ -142,23 +135,23 @@
           cache.videoButtonParent.appendChild(cache.buttonNode.cloneNode(true));
         }
       });
-
-      // 属性いじられたら復元
-      if (m.type === "attributes") {
+      // 属性変更の復元対象は style のみ
+      if (m.type === "attributes" && m.attributeName === "style") {
         const tgt = m.target;
         if (tgt.id === "skipAdButton" && cache.buttonNode) {
-          const attr = m.attributeName;
-          const val  = cache.buttonNode.getAttribute(attr);
-          if (val == null) tgt.removeAttribute(attr);
-          else tgt.setAttribute(attr, val);
+          const val = cache.buttonNode.getAttribute("style");
+          if (val) tgt.setAttribute("style", val);
         }
       }
     });
   });
 
   observer.observe(document.body, {
-    childList: true, subtree: true,
-    attributes: true, attributeFilter: ["disabled", "style"]
+    childList: true,
+    subtree: true,
+    attributes: true,
+    // disabled 属性は監視しない → skip.disabled = false が維持される
+    attributeFilter: ["style"]
   });
 
 })();
