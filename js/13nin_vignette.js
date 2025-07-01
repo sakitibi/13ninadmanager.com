@@ -23,7 +23,6 @@
     { src: "Arn-LtWbKxg", base:   6, pat1: 934 },
     { src: "OaLgiEOYQqs", base:   6, pat1:1028 },
     { src: "_LhLyW4Yk-M", base:   6, pat1:  32 },
-    { src: "zIqNvunFAXs", base:   6, pat1:   6 }
   ];
 
   window.blockAdBlock = false;
