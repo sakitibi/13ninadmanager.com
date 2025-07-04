@@ -1,7 +1,6 @@
 // ==UserScript==
 // @name         13nin_vignette＋復元ガード (完全版)
-// @namespace    http://tampermonkey.net/
-// @version      1.1.2
+// @version      2.0.0
 // @description  動的広告表示＋要素復元ガード（スキップ制御完全対応）
 // @match        *://*/*
 // @grant        none
