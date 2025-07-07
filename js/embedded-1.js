@@ -60,9 +60,6 @@
     var wi_random110 = Math.floor(Math.random() * 10) + 1;
     var wi_isread_yet = true;
     var wi_location_hash = location.hash || false;
-
-    window.wikiFq = createWikiFq();
-
     var wi_recref = recordReferrerDomain();
 
 const visitData_20241117 = (() => {
