@@ -86,9 +86,7 @@ if (defineSlotFlux.length) {
         });
     });
 }
-</script>
 
-<script type="text/javascript">
 if (defineSlotFlux.length) {
     // set failsafe timeout
     setTimeout(function () {
