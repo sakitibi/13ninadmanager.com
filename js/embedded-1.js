@@ -245,8 +245,8 @@ document.addEventListener("DOMContentLoaded", () => {
    let AdRandom = Math.floor(Math.random() * 2);
     if(sessionStorage.getItem("FrameError") === "true"){
        AdRandom = 1;
-       sessionStorage.removeItem("FrameError");
     }
+    sessionStorage.removeItem("FrameError");
     if (document.getElementById("main-contents-bottom") !== null){
         const MainContentsBottom = document.getElementById("main-contents-bottom");
     	if(AdRandom === 0){
