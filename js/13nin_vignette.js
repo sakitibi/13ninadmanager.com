@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         13nin_vignette＋復元ガード (完全版＋30分ブロック)
-// @version      2.1.0
+// @version      2.0.0
 // @description  動的広告表示＋要素復元ガード＋スキップ後30分非表示
 // @match        *://*/*
 // @grant        none
