@@ -257,11 +257,11 @@ document.addEventListener("DOMContentLoaded", () => {
     	if(AdRandom === 0){
     	    MainContentsBottom.innerHTML = (`
          		<iframe class="juusannninadmanager" src="https://sakitibi-com9.webnode.jp/page/0" width="336" height="280"></iframe>
-    		    <iframe class="juusannninadmanager" src="https://sakitibi-com9.webnode.jp/page/0" width="336" height="280"></iframe>
+    		      <iframe class="juusannninadmanager" src="https://sakitibi-com9.webnode.jp/page/0" width="336" height="280"></iframe>
          	`);
             setTimeout(() => {
                 const AdFrame = document.getElementsByClassName("juusannninadmanager");
-                for(let i; i < AdFrame.length; i++){
+                for(let i = 0; i < AdFrame.length; i++){
                     const AdFrameSrc = AdFrame[i].src;
                     if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0" || AdFrameSrc === "chrome-error://chromewebdata/"){
                         MainContentsBottom.innerHTML = "";
