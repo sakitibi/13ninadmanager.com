@@ -1,4 +1,4 @@
-let AdRandom = KaikiIkki(2);
+let AdRandom = Math.floor(Math.random() * 2);
 document.addEventListener("DOMContentLoaded", () => {
   if(typeof document.getElementById("main-contents-bottom") !== undefined){
       const MainContentsBottom = document.getElementById("main-contents-bottom");
