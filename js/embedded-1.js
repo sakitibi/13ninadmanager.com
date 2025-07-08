@@ -1,11 +1,6 @@
    var wi_stay = (function () {
         var wi_data_raw = localStorage.getItem('browsingStatistics');
         var wi_data = wi_data_raw ? (JSON.parse(wi_data_raw) || {}) : {};
-        var stay = Number(wi_data.stay);
-        if (isNaN(stay)) {
-            stay = 0;
-        }
-        return stay;
     })();
     var wi_data_raw = localStorage.getItem('usageStatistics');
     var wi_data =     wi_data_raw ? (JSON.parse(wi_data_raw) || {}) : {};
