@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const AdFrame = document.getElementsByClassName("juusannninadmanager");
                 for(let i; i < AdFrame.length; i++){
                     const AdFrameSrc = AdFrame[i].src;
-                    if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0"){
+                    if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0" || AdFrameSrc === "chrome-error://chromewebdata/"){
                         MainContentsBottom.innerHTML = "";
                         sessionStorage.setItem("FrameError", "true");
                         location.reload();
