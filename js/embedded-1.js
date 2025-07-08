@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 const AdFrame = document.getElementsByClassName("juusannninadmanager");
                 for(let i; i < AdFrame.length; i++){
-                    const AdFrameSrc = Adframe[i].src;
+                    const AdFrameSrc = AdFrame[i].src;
                     if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0"){
                         MainContentsBottom.innerHTML = "";
                         Main();
