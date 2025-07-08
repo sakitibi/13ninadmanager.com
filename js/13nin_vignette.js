@@ -21,6 +21,7 @@
     { src: "Arn-LtWbKxg", base: 6, pat1: 934 },
     { src: "OaLgiEOYQqs", base: 6, pat1:1028 },
     { src: "_LhLyW4Yk-M", base: 6, pat1: 32 },
+    { src: "O7iVIK_tLpE", base: 6, pat1: 578 },
   ];
 
   function shouldShowAd() {
@@ -90,7 +91,6 @@
     document.body.appendChild(skip);
 
     let counter = adData.skipCount;
-    document.querySelector("#player").onclick = function() {
       const timer = setInterval(() => {
           if (counter >= 0) {
             skip.textContent = `スキップ あと${counter}秒`;
@@ -102,8 +102,6 @@
           }
       }, 1000);
     }
-  }
-
   if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd()) {
     playAdVideo();
   }
