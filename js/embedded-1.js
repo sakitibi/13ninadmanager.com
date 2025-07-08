@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         location.reload();
                     }
                 }
-            }, 100000);
+            }, 10000);
         }
     }
 });
