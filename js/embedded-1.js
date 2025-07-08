@@ -1,4 +1,3 @@
-function Main(){
    var wi_stay = (function () {
         var wi_data_raw = localStorage.getItem('browsingStatistics');
         var wi_data = wi_data_raw ? (JSON.parse(wi_data_raw) || {}) : {};
@@ -246,12 +245,13 @@ function Main(){
             slotElement?.parentNode?.classList.remove("default-advertisement");
         });
     });
-}
-
-Main();
 
 document.addEventListener("DOMContentLoaded", () => {
-    let AdRandom = Math.floor(Math.random() * 2);
+   let AdRandom = Math.floor(Math.random() * 2);
+    if(sessionStorage.getItem("FrameError") === "true"){
+       AdRandom = 1;
+       sessionStorage.removeItem("FrameError");
+    }
     if (document.getElementById("main-contents-bottom") !== null){
         const MainContentsBottom = document.getElementById("main-contents-bottom");
     	if(AdRandom === 0){
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const AdFrameSrc = AdFrame[i].src;
                     if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0"){
                         MainContentsBottom.innerHTML = "";
-                        Main();
+                        sessionStorage.setItem("FrameError", "true");
                     }
                 }
             }, 100000);
