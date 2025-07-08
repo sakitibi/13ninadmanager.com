@@ -266,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if(AdFrameSrc === "https://sakitibi-com9.webnode.jp/page/0"){
                         MainContentsBottom.innerHTML = "";
                         sessionStorage.setItem("FrameError", "true");
+                        location.reload();
                     }
                 }
             }, 100000);
