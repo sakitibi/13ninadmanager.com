@@ -1,4 +1,15 @@
+let AdRandom = KaikiIkki(2);
 document.addEventListener("DOMContentLoaded", () => {
+  if(typeof document.getElementById("main-contents-bottom") !== undefined){
+      const MainContentsBottom = document.getElementById("main-contents-bottom");
+    	if(AdRandom === 0){
+    	    MainContentsBottom.innerHTML = (`
+         		<iframe class="juusannninadmanager" src="https://sakitibi-com9.webnode.jp/page/0" width="336" height="280"></iframe>
+    		    <iframe class="juusannninadmanager" src="https://sakitibi-com9.webnode.jp/page/0" width="336" height="280"></iframe>
+         	`);
+    	}
+  }
+  
   var urls = [
         'https://sakitibi.github.io/13ninadmanager.com/SuperNewRoles-Logo',
         'https://sakitibi.github.io/13ninadmanager.com/13ninad-1',
