@@ -90,17 +90,18 @@
     document.body.appendChild(skip);
 
     let counter = adData.skipCount;
-    const timer = setInterval(() => {
-      if (counter >= 0) {
-        skip.textContent = `スキップ あと${counter}秒`;
-        counter--;
-      } else {
-        clearInterval(timer);
-        skip.disabled = false;
-        skip.textContent = "スキップ";
-      }
-    }, 1000);
-  }
+    document.querySelector("#player").onclick = function() {
+      const timer = setInterval(() => {
+          if (counter >= 0) {
+            skip.textContent = `スキップ あと${counter}秒`;
+            counter--;
+          } else {
+            clearInterval(timer);
+            skip.disabled = false;
+            skip.textContent = "スキップ";
+          }
+      }, 1000);
+    }
 
   if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd()) {
     playAdVideo();
