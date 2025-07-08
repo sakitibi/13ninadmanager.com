@@ -102,6 +102,7 @@
           }
       }, 1000);
     }
+  }
 
   if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd()) {
     playAdVideo();
@@ -155,5 +156,4 @@
     attributes: true,
     attributeFilter: ["style"]
   });
-
 })();
