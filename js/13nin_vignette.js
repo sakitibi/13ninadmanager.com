@@ -68,7 +68,6 @@
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
     skip.disabled = true;
-    skip.textContent = `スキップ あと${adData.skipCount}秒`;
     Object.assign(skip.style, {
       position: "fixed",
       bottom: "20px",
@@ -89,6 +88,10 @@
     });
 
     document.body.appendChild(skip);
+
+    const span = document.createElement("span");
+    span.textContent = `スキップ あと${adData.skipCount}秒`;
+    skip.appendChild(span);
 
     let counter = adData.skipCount;
       const timer = setInterval(() => {
