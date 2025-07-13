@@ -96,12 +96,12 @@
     let counter = adData.skipCount;
       const timer = setInterval(() => {
           if (counter >= 0) {
-            skip.textContent = `スキップ あと${counter}秒`;
+            span.textContent = `スキップ あと${counter}秒`;
             counter--;
           } else {
             clearInterval(timer);
             skip.disabled = false;
-            skip.textContent = "スキップ";
+            span.textContent = "スキップ";
           }
       }, 1000);
     }
