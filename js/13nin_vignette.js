@@ -15,14 +15,14 @@
   let observer;
   const url = new URL(location.href);
   const selects = [
-    { src: "S7O5-dFA420", base: 6, pat1: 140 },
-    { src: "Eh3cJyXCmBU", base: 6, pat1: 483 },
-    { src: "4RhagVtxbwk", base: 6, pat1: 735 },
-    { src: "meDW3yvRlig", base: 6, pat1: 934 },
-    { src: "OaLgiEOYQqs", base: 6, pat1:1028 },
-    { src: "_LhLyW4Yk-M", base: 6, pat1: 32 },
-    { src: "O7iVIK_tLpE", base: 6, pat1: 578 },
-    { src: "7eJTeiG83Uo", base: 6, pat1: 17 }
+    { src: "S7O5-dFA420", base: 6, pat1: 140 }, // 万博
+    { src: "Eh3cJyXCmBU", base: 6, pat1: 483 }, // メテヲ
+    { src: "4RhagVtxbwk", base: 6, pat1: 735 }, // Latte
+    { src: "meDW3yvRlig", base: 6, pat1: 934 }, // ひなにい
+    { src: "OaLgiEOYQqs", base: 6, pat1:1028 }, // めめんともり
+    { src: "_LhLyW4Yk-M", base: 6, pat1: 32 }, // 原神 v5.7
+    { src: "O7iVIK_tLpE", base: 6, pat1: 578 }, // みぞれ
+    { src: "7eJTeiG83Uo", base: 6, pat1: 17 } // Wecars
   ];
 
   function shouldShowAd() {
