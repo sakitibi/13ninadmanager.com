@@ -22,6 +22,7 @@
     { src: "OaLgiEOYQqs", base: 6, pat1:1028 },
     { src: "_LhLyW4Yk-M", base: 6, pat1: 32 },
     { src: "O7iVIK_tLpE", base: 6, pat1: 578 },
+    { src: "7eJTeiG83Uo", base: 6, pat1: 17 }
   ];
 
   function shouldShowAd() {
