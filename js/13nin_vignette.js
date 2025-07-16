@@ -19,7 +19,7 @@
     { src: "Eh3cJyXCmBU", base: 6, pat1: 483 }, // メテヲ
     { src: "4RhagVtxbwk", base: 6, pat1: 735 }, // Latte
     { src: "meDW3yvRlig", base: 6, pat1: 934 }, // ひなにい
-    { src: "OaLgiEOYQqs", base: 6, pat1:1028 }, // めめんともり
+    { src: "f7VBbLZey-Y", base: 6, pat1:1114 }, // めめんともり
     { src: "_LhLyW4Yk-M", base: 6, pat1: 32 }, // 原神 v5.7
     { src: "O7iVIK_tLpE", base: 6, pat1: 578 }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17 } // Wecars
