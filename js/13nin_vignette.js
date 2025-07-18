@@ -21,7 +21,7 @@
     { src: "meDW3yvRlig", base: 6, pat1: 893 }, // ひなにい
     { src: "f7VBbLZey-Y", base: 6, pat1:1114 }, // めめんともり
     { src: "_LhLyW4Yk-M", base: 6, pat1: 32 }, // 原神 v5.7
-    { src: "O7iVIK_tLpE", base: 6, pat1: 567 }, // みぞれ
+    { src: "c_LPwf5KbMc", base: 6, pat1: 567 }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17 } // Wecars
   ];
 
