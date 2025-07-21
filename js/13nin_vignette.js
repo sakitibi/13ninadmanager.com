@@ -18,7 +18,7 @@
     { src: "S7O5-dFA420", base: 6, pat1: 140 }, // 万博
     { src: "sgVVR34sHio", base: 6, pat1: 483 }, // メテヲ
     { src: "aofM3pwazmg", base: 6, pat1: 707 }, // Latte
-    { src: "meDW3yvRlig", base: 6, pat1: 893 }, // ひなにい
+    { src: "ch6RD5KlNaI", base: 6, pat1: 868 }, // ひなにい
     { src: "f7VBbLZey-Y", base: 6, pat1:1114 }, // めめんともり
     { src: "_LhLyW4Yk-M", base: 6, pat1: 32 }, // 原神 v5.7
     { src: "c_LPwf5KbMc", base: 6, pat1: 567 }, // みぞれ
