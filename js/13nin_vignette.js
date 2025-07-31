@@ -83,6 +83,9 @@
       localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
       iframe.remove();
       skip.remove();
+      sponsorInline.remove();
+      sponsorRow.remove();
+      sponsor.remove();
       isAdPlaying = false;
       if (observer) observer.disconnect();
       cache.iframeNode = null;
