@@ -93,6 +93,14 @@
 
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
+    Object.assign(sponsor.style, {
+      position: "fixed",
+      bottom: "20px",
+      left: "20px",
+      padding: "10px 20px",
+      fontSize: "18px",
+      zIndex: 10000
+    });
     document.body.appendChild(sponsor);
 
     const sponsorRow = document.createElement("p");
