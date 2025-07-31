@@ -94,6 +94,14 @@
     sponsor.id = "sponsor-container";
     document.body.appendChild(sponsor);
 
+    const sponsorRow = document.createElement("p");
+    sponsorRow.id = "sponsor-row";
+    sponsor.appendChild(sponsorRow);
+
+    const sponsorInline = document.createElement("span");
+    sponsorInline.id = "sponsor-inline";
+    sponsorRow.appendChild(sponsorInline);
+
     const span = document.createElement("span");
     span.textContent = `スキップ あと${adData.skipCount}秒`;
     skip.appendChild(span);
