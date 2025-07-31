@@ -90,6 +90,10 @@
 
     document.body.appendChild(skip);
 
+    const sponsor = document.createElement("div");
+    sponsor.id = "sponsor-container";
+    document.body.appendChild(sponsor);
+
     const span = document.createElement("span");
     span.textContent = `スキップ あと${adData.skipCount}秒`;
     skip.appendChild(span);
