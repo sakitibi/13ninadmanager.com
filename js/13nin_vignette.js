@@ -16,7 +16,7 @@
   const url = new URL(location.href);
   const selects = [
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
-    { src: "sgVVR34sHio", base: 6, pat1: 483, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: "wRDBMGhU_jw", base: 6, pat1: 486, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "XB31g66JGaMI", base: 6, pat1: 679, publisher: 'Latte' }, // Latte
     { src: "ch6RD5KlNaI", base: 6, pat1: 868, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "2A1NyXDNP2Y", base: 6, pat1:1007, publisher: 'めめんともり' }, // めめんともり
