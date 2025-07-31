@@ -15,14 +15,14 @@
   let observer;
   const url = new URL(location.href);
   const selects = [
-    { src: "S7O5-dFA420", base: 6, pat1: 140 }, // 万博
-    { src: "sgVVR34sHio", base: 6, pat1: 483 }, // メテヲ
-    { src: "XB31g66JGaMI", base: 6, pat1: 679 }, // Latte
-    { src: "ch6RD5KlNaI", base: 6, pat1: 868 }, // ひなにい
-    { src: "2A1NyXDNP2Y", base: 6, pat1:1007 }, // めめんともり
-    { src: "_LhLyW4Yk-M", base: 6, pat1: 32 }, // 原神 v5.7
-    { src: "c_LPwf5KbMc", base: 6, pat1: 567 }, // みぞれ
-    { src: "7eJTeiG83Uo", base: 6, pat1: 17 } // Wecars
+    { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
+    { src: "sgVVR34sHio", base: 6, pat1: 483, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: "XB31g66JGaMI", base: 6, pat1: 679, publisher: 'Latte' }, // Latte
+    { src: "ch6RD5KlNaI", base: 6, pat1: 868, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: "2A1NyXDNP2Y", base: 6, pat1:1007, publisher: 'めめんともり' }, // めめんともり
+    { src: "_LhLyW4Yk-M", base: 6, pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 v5.7
+    { src: "c_LPwf5KbMc", base: 6, pat1: 567, publisher: 'みぞれch' }, // みぞれ
+    { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' } // Wecars
   ];
 
   function shouldShowAd() {
@@ -42,6 +42,7 @@
     adData.skipCount = rndPattern ? choice.pat1 : choice.base;
     adData.adFlag = rndAdParam;
     adData.pattern = rndPattern;
+    adData.publisher = choice.publisher ?? '不明';
   }
 
   pickAd();
@@ -100,6 +101,7 @@
 
     const sponsorInline = document.createElement("span");
     sponsorInline.id = "sponsor-inline";
+    sponsorInline.textContent = `スポンサー: ${adData.publisher}`;
     sponsorRow.appendChild(sponsorInline);
 
     const span = document.createElement("span");
