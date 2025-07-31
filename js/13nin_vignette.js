@@ -110,7 +110,7 @@
     const sponsorInline = document.createElement("span");
     sponsorInline.id = "sponsor-inline";
     Object.assign(sponsorInline.style, {
-      color: '#ffffff';
+      color: '#ffffff',
       fontSize: "18px",
       zIndex: 10000
     });
