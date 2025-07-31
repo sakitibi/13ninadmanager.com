@@ -109,6 +109,11 @@
 
     const sponsorInline = document.createElement("span");
     sponsorInline.id = "sponsor-inline";
+    Object.assign(sponsorInline.style, {
+      color: '#ffffff';
+      fontSize: "18px",
+      zIndex: 10000
+    });
     sponsorInline.textContent = `スポンサー: ${adData.publisher}`;
     sponsorRow.appendChild(sponsorInline);
 
