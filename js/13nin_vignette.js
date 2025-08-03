@@ -20,7 +20,7 @@
     { src: "XB31g66JGaMI", base: 6, pat1: 679, publisher: 'Latte' }, // Latte
     { src: "IBfDRlEwu8Y", base: 6, pat1: 945, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "LAjB5QEYpy4", base: 6, pat1:1025, publisher: 'めめんともり' }, // めめんともり
-    { src: "_LhLyW4Yk-M", base: 6, pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 v5.7
+    { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
     { src: "c_LPwf5KbMc", base: 6, pat1: 567, publisher: 'みぞれch' }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' } // Wecars
   ];
