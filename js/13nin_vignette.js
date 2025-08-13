@@ -23,7 +23,7 @@
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
     { src: "c_LPwf5KbMc", base: 6, pat1: 567, publisher: 'みぞれch' }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
-    { src: "ppjRhZOPEu4", base: 6, pat1: 945, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
+    { src: "Jd5jd4F6zPY", base: 6, pat1: 639, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
   ];
 
   function shouldShowAd() {
