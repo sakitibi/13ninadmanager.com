@@ -1,4 +1,10 @@
 {
+  "sknewroles": [
+    "Train Builder",
+    "13ninstudio 公式",
+    "あげるくん",
+    "わかさ生活"
+  ],
   "page_embeds": [
     "Green Japan",
     "Leverages",
@@ -18,5 +24,11 @@
     "みぞれch",
     "WECARS ウィーカーズ",
     "ゆっくりウパパロン"
-  ]
+  ],
+  "limiteds": {
+    "公益社団法人2025年日本国際博覧会協会": "2025-10-13",
+    "わかさ生活": {
+      "page_embeds": "2025-08-31"
+    }
+  }
 }
