@@ -17,7 +17,7 @@
   const selects = [
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
     { src: "OlpF07gcAO4", base: 6, pat1: 493, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: "PTnakjh00QU", base: 6, pat1: 621, publisher: 'Latte' }, // Latte
+    { src: "E-y4z2DcpFo", base: 6, pat1: 628, publisher: 'Latte' }, // Latte
     { src: "rlqVWYJJ-gg", base: 6, pat1: 891, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "ujXJsiomjXI", base: 6, pat1:1086, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
