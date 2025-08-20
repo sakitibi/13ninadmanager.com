@@ -19,7 +19,7 @@
     { src: "OlpF07gcAO4", base: 6, pat1: 493, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "E-y4z2DcpFo", base: 6, pat1: 628, publisher: 'Latte' }, // Latte
     { src: "rlqVWYJJ-gg", base: 6, pat1: 891, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: "ujXJsiomjXI", base: 6, pat1:1086, publisher: 'めめんともり' }, // めめんともり
+    { src: "ghb1p7ao8CQ", base: 6, pat1:1024, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
     { src: "ABoHJDW5P_w", base: 6, pat1: 666, publisher: 'みぞれch' }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
