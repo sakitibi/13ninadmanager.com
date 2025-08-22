@@ -18,12 +18,12 @@
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
     { src: "OlpF07gcAO4", base: 6, pat1: 493, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "E-y4z2DcpFo", base: 6, pat1: 628, publisher: 'Latte' }, // Latte
-    { src: "rlqVWYJJ-gg", base: 6, pat1: 891, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: "43yb1pDBHBg", base: 6, pat1: 845, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "ghb1p7ao8CQ", base: 6, pat1:1024, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
-    { src: "ABoHJDW5P_w", base: 6, pat1: 666, publisher: 'みぞれch' }, // みぞれ
+    { src: "LQi3U7qt4WU", base: 6, pat1: 576, publisher: 'みぞれch' }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
-    { src: "Jd5jd4F6zPY", base: 6, pat1: 639, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
+    { src: "BXF3WYagNBU", base: 6, pat1: 708, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
   ];
 
   function shouldShowAd() {
