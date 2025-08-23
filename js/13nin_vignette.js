@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         13nin_vignette＋復元ガード (完全版＋30分ブロック)
-// @version      2.0.10
+// @version      2.0.20
 // @description  動的広告表示＋要素復元ガード＋スキップ後30分非表示
 // @match        *://*/*
 // @grant        none
@@ -17,7 +17,7 @@
   const selects = [
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
     { src: "OlpF07gcAO4", base: 6, pat1: 493, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: "E-y4z2DcpFo", base: 6, pat1: 628, publisher: 'Latte' }, // Latte
+    { src: "TWTwp_autBY", base: 6, pat1: 606, publisher: 'Latte' }, // Latte
     { src: "43yb1pDBHBg", base: 6, pat1: 845, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "ghb1p7ao8CQ", base: 6, pat1:1024, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
