@@ -17,17 +17,9 @@
     } else {
         var wi_referer = "unknown";
     }
-
-    // Chromium系判定
-    function isChromium() {
-        var ua = navigator.userAgent;
-        // Edge, Opera, Chrome, Chromium, Brave など
-        return /\b(Chrome|Chromium|Edg|OPR|Brave)\b/.test(ua) && !/Silk|UCBrowser|SamsungBrowser|CriOS|FxiOS|OPiOS|EdgiOS/.test(ua);
-    }
-
     var wi_ismobile;
     var wi_device;
-    if (isChromium() && navigator.userAgentData) {
+    if (navigator.userAgentData) {
         wi_ismobile = navigator.userAgentData.mobile;
         if (wi_ismobile) {
             if (navigator.userAgentData.platform === "Android") {
