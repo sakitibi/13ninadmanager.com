@@ -21,7 +21,7 @@
     { src: "9qxyrJP8bzw", base: 6, pat1: 879, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "UaOoOhZwyX0", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
-    { src: "zj7VkpoLnMM", base: 6, pat1: 522, publisher: 'みぞれch' }, // みぞれ
+    { src: "nudFeoHrS14", base: 6, pat1: 545, publisher: 'みぞれch' }, // みぞれ
     { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
     { src: "7KZeszzUJpg", base: 6, pat1: 573, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
   ];
