@@ -59,7 +59,9 @@ function pickAdHooks(IsTrainBuildersHooks){
   const adHookingInterval = setInterval(() => {
       if(IsTrainBuilders && adHookings === true){
           pickAd();
-          playAdVideo();
+          if(adData.adFlag){
+            playAdVideo();
+          }
       }
   }, 50);
 
