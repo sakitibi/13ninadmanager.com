@@ -75,7 +75,9 @@ function pickAdHooks(IsTrainBuildersHooks){
   function playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
-    isAdPlayingTBA = true;
+    if(IsTrainBuilders){
+      isAdPlayingTBA = true;
+    }
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
@@ -107,13 +109,17 @@ function pickAdHooks(IsTrainBuildersHooks){
       sponsorRow.remove();
       sponsor.remove();
       isAdPlaying = false;
-      isAdPlayingTBA = false;
+      if(IsTrainBuilders){
+        isAdPlayingTBA = false;
+      }
       if (observer) observer.disconnect();
       cache.iframeNode = null;
       cache.buttonNode = null;
-      if (IsTrainBuilders && gPhase === 8){
-        message1.innerHTML = "";
-        respawn();
+      if (IsTrainBuilders){
+        if(gPhase === 8){
+             message1.innerHTML = "";
+             respawn();
+        }
       }
     });
 
