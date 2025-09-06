@@ -8,10 +8,9 @@
 // ==/UserScript==
 let adHookings = false;
 function pickAdHooks(){
-  adHookings = true;
-}
-if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
-  pickAdHooks()
+  if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
+    adHookings = true;
+  }
 }
 (function(){
   'use strict';
