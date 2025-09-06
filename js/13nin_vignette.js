@@ -75,6 +75,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   function playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
+    isAdPlayingTBA = true;
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
