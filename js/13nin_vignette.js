@@ -10,6 +10,8 @@ let adHookings = false;
 function pickAdHooks(){
   if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
     adHookings = true;
+  } else {
+    return;
   }
 }
 (function(){
@@ -51,9 +53,11 @@ function pickAdHooks(){
     adData.publisher = choice.publisher ?? '不明';
   }
 
-  setInterval(() => {
+  const adHookingInterval = setInterval(() => {
       if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
           pickAd();
+      } else {
+        clearInterval(adHookingInterval);
       }
   }, 50);
 
