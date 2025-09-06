@@ -14,8 +14,6 @@ function pickAdHooks(IsTrainBuildersHooks){
   }
   if(IsTrainBuilders){
     adHookings = true;
-  } else {
-    return;
   }
 }
 (function(){
@@ -62,8 +60,6 @@ function pickAdHooks(IsTrainBuildersHooks){
       if(IsTrainBuilders && adHookings === true){
           pickAd();
           playAdVideo();
-      } else {
-          clearInterval(adHookingInterval);
       }
   }, 50);
 
