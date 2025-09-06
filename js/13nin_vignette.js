@@ -91,6 +91,10 @@
       if (observer) observer.disconnect();
       cache.iframeNode = null;
       cache.buttonNode = null;
+      if (typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
+        message1.innerHTML = "";
+        respawn();
+      }
     });
 
     document.body.appendChild(skip);
