@@ -107,6 +107,7 @@ function pickAdHooks(IsTrainBuildersHooks){
       sponsorRow.remove();
       sponsor.remove();
       isAdPlaying = false;
+      isAdPlayingTBA = false;
       if (observer) observer.disconnect();
       cache.iframeNode = null;
       cache.buttonNode = null;
