@@ -43,6 +43,7 @@ function pickAdHooks(){
   }
 
   function pickAd() {
+    adHookings = false;
     const rndPattern = Math.random() < 0.5 ? 1 : 0;
     const rndAdParam = (Math.floor(Math.random() * 11) === 10);
     const choice = selects[Math.floor(Math.random() * selects.length)];
@@ -69,7 +70,6 @@ function pickAdHooks(){
   function playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
-    adHookings = false;
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
