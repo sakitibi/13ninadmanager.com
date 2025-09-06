@@ -57,8 +57,9 @@ function pickAdHooks(){
   const adHookingInterval = setInterval(() => {
       if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
           pickAd();
+          playAdVideo();
       } else {
-        clearInterval(adHookingInterval);
+          clearInterval(adHookingInterval);
       }
   }, 50);
 
@@ -154,13 +155,13 @@ function pickAdHooks(){
           }
       }, 1000);
     }
-  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd()) {
+  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
     playAdVideo();
   }
 
   setInterval(() => {
     pickAd();
-    if (adData.adFlag && shouldShowAd()) {
+    if (adData.adFlag && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
       url.searchParams.set("ad", "google_vignette");
       history.replaceState({}, '', url);
       playAdVideo();
