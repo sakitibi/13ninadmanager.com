@@ -52,9 +52,11 @@ if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
     adData.publisher = choice.publisher ?? '不明';
   }
 
-  if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
-      pickAd();
-  }
+  setInterval(() => {
+      if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
+          pickAd();
+      }
+  }, 50);
 
   if (adData.adFlag && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
     url.searchParams.set("ad", "google_vignette");
