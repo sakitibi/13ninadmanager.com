@@ -18,8 +18,6 @@ function pickAdHooks(IsTrainBuildersHooks){
 }
 (function(){
   'use strict';
-
-  let isAdPlaying = false;
   let adData = {};
   let observer;
   const url = new URL(location.href);
