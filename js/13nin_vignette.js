@@ -111,7 +111,7 @@ function pickAdHooks(IsTrainBuildersHooks){
       if (observer) observer.disconnect();
       cache.iframeNode = null;
       cache.buttonNode = null;
-      if (IsTrainBuilders){
+      if (IsTrainBuilders && gPhase === 8){
         message1.innerHTML = "";
         respawn();
       }
