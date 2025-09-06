@@ -7,8 +7,12 @@
 // @license      13ninstudio
 // ==/UserScript==
 let adHookings = false;
-function pickAdHooks(){
-  if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
+let IsTrainBuilders = false;
+function pickAdHooks(IsTrainBuildersHooks){
+  if(IsTrainBuildersHooks){
+    IsTrainBuilders = true;
+  }
+  if(IsTrainBuilders){
     adHookings = true;
   } else {
     return;
@@ -55,7 +59,7 @@ function pickAdHooks(){
   }
 
   const adHookingInterval = setInterval(() => {
-      if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
+      if(IsTrainBuilders && adHookings === true){
           pickAd();
           playAdVideo();
       } else {
@@ -63,7 +67,7 @@ function pickAdHooks(){
       }
   }, 50);
 
-  if (adData.adFlag && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
+  if (adData.adFlag && shouldShowAd() && !IsTrainBuilders) {
     url.searchParams.set("ad", "google_vignette");
     history.replaceState({}, '', url);
   }
@@ -105,7 +109,7 @@ function pickAdHooks(){
       if (observer) observer.disconnect();
       cache.iframeNode = null;
       cache.buttonNode = null;
-      if (typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
+      if (IsTrainBuilders){
         message1.innerHTML = "";
         respawn();
       }
@@ -155,13 +159,13 @@ function pickAdHooks(){
           }
       }, 1000);
     }
-  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
+  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
     playAdVideo();
   }
 
   setInterval(() => {
     pickAd();
-    if (adData.adFlag && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
+    if (adData.adFlag && shouldShowAd() && !IsTrainBuilders) {
       url.searchParams.set("ad", "google_vignette");
       history.replaceState({}, '', url);
       playAdVideo();
