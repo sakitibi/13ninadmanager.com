@@ -8,6 +8,7 @@
 // ==/UserScript==
 let adHookings = false;
 let IsTrainBuilders = false;
+let isAdPlaying = false;
 function pickAdHooks(IsTrainBuildersHooks){
   if(IsTrainBuildersHooks){
     IsTrainBuilders = true;
@@ -55,11 +56,14 @@ function pickAdHooks(IsTrainBuildersHooks){
   }
 
   const adHookingInterval = setInterval(() => {
-      if(IsTrainBuilders && adHookings === true){
+      if(IsTrainBuilders){
+        isAdPlayingTBA = isAdPlaying;
+        if(adHookings === true){
           pickAd();
           if(adData.adFlag){
             playAdVideo();
           }
+        }
       }
   }, 50);
 
