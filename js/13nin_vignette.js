@@ -6,7 +6,13 @@
 // @grant        none
 // @license      13ninstudio
 // ==/UserScript==
-
+let adHookings = false;
+function pickAdHooks(){
+  adHookings = true;
+}
+if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined'){
+  pickAdHooks()
+}
 (function(){
   'use strict';
 
@@ -46,9 +52,11 @@
     adData.publisher = choice.publisher ?? '不明';
   }
 
-  pickAd();
+  if(typeof window.electronAPI.IsTrainBuilders() !== 'undefined' && adHookings === true){
+      pickAd();
+  }
 
-  if (adData.adFlag && shouldShowAd()) {
+  if (adData.adFlag && shouldShowAd() && typeof window.electronAPI.IsTrainBuilders() === 'undefined') {
     url.searchParams.set("ad", "google_vignette");
     history.replaceState({}, '', url);
   }
@@ -56,7 +64,7 @@
   function playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
-
+    adHookings = false;
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
