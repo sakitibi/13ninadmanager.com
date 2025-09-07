@@ -30,7 +30,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "UaOoOhZwyX0", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
     { src: "nudFeoHrS14", base: 6, pat1: 545, publisher: 'みぞれch' }, // みぞれ
-    { src: "7eJTeiG83Uo", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
+    { src: "GS0uYMSRXxc", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
     { src: "7KZeszzUJpg", base: 6, pat1: 573, publisher: 'ゆっくりウパパロン' } // ゆっくりウパパロン
   ];
 
