@@ -50,7 +50,9 @@ function pickAdHooks(IsTrainBuildersHooks){
     const choice = selects[Math.floor(Math.random() * selects.length)];
     adData.src = `https://www.youtube.com/embed/${choice.src}?autoplay=1&controls=0`;
     adData.skipCount = rndPattern ? choice.pat1 : choice.base;
-    adData.adFlag = rndAdParam;
+    if(!IsTrainBuilders){
+      adData.adFlag = rndAdParam;
+    }
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
   }
@@ -59,9 +61,7 @@ function pickAdHooks(IsTrainBuildersHooks){
       if(IsTrainBuilders){
         if(adHookings === true){
           pickAd();
-          if(adData.adFlag){
-            playAdVideo();
-          }
+          playAdVideo();
         }
       }
   }, 50);
