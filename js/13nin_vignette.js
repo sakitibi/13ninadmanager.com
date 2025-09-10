@@ -27,7 +27,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "MC_zzXNXfKI", base: 6, pat1: 489, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "ZlitSSmdQ_8", base: 6, pat1: 613, publisher: 'Latte' }, // Latte
     { src: "8Elvq9YfGNc", base: 6, pat1: 876, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: "UaOoOhZwyX0", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
+    { src: "7OnV7KgY2U8", base: 6, pat1:1070, publisher: 'めめんともり' }, // めめんともり
     { src: "7NLwNj_hYk4", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 v5.8
     { src: "nudFeoHrS14", base: 6, pat1: 545, publisher: 'みぞれch' }, // みぞれ
     { src: "GS0uYMSRXxc", base: 6, pat1: 17, publisher: 'WECARS ウィーカーズ' }, // Wecars
