@@ -75,6 +75,29 @@ function pickAdHooks(IsTrainBuildersHooks){
     history.replaceState({}, '', url);
   }
 
+  function skipButtonClick(){
+    localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
+    iframe.remove();
+    skip.remove();
+    sponsorInline.remove();
+    sponsorRow.remove();
+    sponsor.remove();
+    stylesheet.remove();
+    isAdPlaying = false;
+    if(IsTrainBuilders){
+      isAdPlayingTBA = false;
+    }
+    if (observer) observer.disconnect();
+    cache.iframeNode = null;
+    cache.buttonNode = null;
+    if (IsTrainBuilders){
+      if(gPhase === 8){
+           message1.innerHTML = "";
+           respawn();
+      }
+    }
+  }
+
   function playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
@@ -93,27 +116,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
     skip.disabled = true;
-    skip.addEventListener("click", () => {
-      localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
-      iframe.remove();
-      skip.remove();
-      sponsorInline.remove();
-      sponsorRow.remove();
-      sponsor.remove();
-      isAdPlaying = false;
-      if(IsTrainBuilders){
-        isAdPlayingTBA = false;
-      }
-      if (observer) observer.disconnect();
-      cache.iframeNode = null;
-      cache.buttonNode = null;
-      if (IsTrainBuilders){
-        if(gPhase === 8){
-             message1.innerHTML = "";
-             respawn();
-        }
-      }
-    });
+    skip.addEventListener("click", skipButtonClick);
     document.body.appendChild(skip);
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
