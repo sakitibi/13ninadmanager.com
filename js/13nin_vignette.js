@@ -88,11 +88,6 @@ function pickAdHooks(IsTrainBuildersHooks){
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
-    Object.assign(iframe.style, {
-      position: "fixed", top: 0, left: 0,
-      width: "100vw", height: "100vh",
-      zIndex: 9999
-    });
     iframe.allow = "autoplay";
     document.body.appendChild(iframe);
     const skip = document.createElement("button");
@@ -119,9 +114,7 @@ function pickAdHooks(IsTrainBuildersHooks){
         }
       }
     });
-
     document.body.appendChild(skip);
-
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
     document.body.appendChild(sponsor);
