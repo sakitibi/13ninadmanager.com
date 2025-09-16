@@ -171,7 +171,10 @@ function pickAdHooks(IsTrainBuildersHooks){
       }, 1000);
     }
   if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
-    playAdVideo();
+    pickAd();
+    if (adData.adFlag && shouldShowAd()) {
+      playAdVideo();
+    }
   }
 
   setInterval(() => {
