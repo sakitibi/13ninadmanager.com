@@ -81,6 +81,10 @@ function pickAdHooks(IsTrainBuildersHooks){
     if(IsTrainBuilders){
       isAdPlayingTBA = true;
     }
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
+    document.head.appendChild(stylesheet);
     const iframe = document.createElement("iframe");
     iframe.id = "adVideo";
     iframe.src = adData.src;
@@ -91,19 +95,9 @@ function pickAdHooks(IsTrainBuildersHooks){
     });
     iframe.allow = "autoplay";
     document.body.appendChild(iframe);
-
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
     skip.disabled = true;
-    Object.assign(skip.style, {
-      position: "fixed",
-      bottom: "20px",
-      right: "20px",
-      padding: "10px 20px",
-      fontSize: "18px",
-      zIndex: 10000
-    });
-
     skip.addEventListener("click", () => {
       localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
       iframe.remove();
@@ -130,14 +124,6 @@ function pickAdHooks(IsTrainBuildersHooks){
 
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
-    Object.assign(sponsor.style, {
-      position: "fixed",
-      bottom: "20px",
-      left: "20px",
-      padding: "10px 20px",
-      fontSize: "18px",
-      zIndex: 10000
-    });
     document.body.appendChild(sponsor);
 
     const sponsorRow = document.createElement("p");
@@ -146,11 +132,6 @@ function pickAdHooks(IsTrainBuildersHooks){
 
     const sponsorInline = document.createElement("span");
     sponsorInline.id = "sponsor-inline";
-    Object.assign(sponsorInline.style, {
-      color: '#ffffff',
-      fontSize: "18px",
-      zIndex: 10000
-    });
     sponsorInline.textContent = `スポンサー: ${adData.publisher}`;
     sponsorRow.appendChild(sponsorInline);
 
