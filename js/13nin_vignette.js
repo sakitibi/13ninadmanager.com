@@ -75,7 +75,14 @@ function pickAdHooks(IsTrainBuildersHooks){
     history.replaceState({}, '', url);
   }
 
-  function skipButtonClick(){
+  function skipButtonClick(
+    iframe,
+    skip,
+    sponsorInline,
+    sponsorRow,
+    sponsor,
+    stylesheet
+  ){
     localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
     iframe.remove();
     skip.remove();
@@ -116,7 +123,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
     skip.disabled = true;
-    skip.addEventListener("click", skipButtonClick);
+    skip.addEventListener("click", () => skipButtonClick(iframe, sponsorInline, sponsorRow, sponsor, stylesheet));
     document.body.appendChild(skip);
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
