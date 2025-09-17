@@ -123,7 +123,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
     skip.disabled = true;
-    skip.addEventListener("click", () => skipButtonClick(iframe, sponsorInline, sponsorRow, sponsor, stylesheet));
+    skip.addEventListener("click", () => skipButtonClick(iframe, skip, sponsorInline, sponsorRow, sponsor, stylesheet));
     document.body.appendChild(skip);
     const sponsor = document.createElement("div");
     sponsor.id = "sponsor-container";
