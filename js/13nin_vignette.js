@@ -34,7 +34,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "7eJTeiG83Uo", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
     { src: "GS0uYMSRXxc", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
     { src: "zk_-tCv7bzE", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
-    { src: "7KZeszzUJpg", base: 6, pat1: 573, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
+    { src: "e-mqoayfaWk", base: 6, pat1: 699, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
     { src: "6X38QpHkFPs", base: 6, pat1: 859, publisher: '茶子 / ゆっくり実況' } // 茶子 / ゆっくり実況
   ];
 
