@@ -24,7 +24,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   const url = new URL(location.href);
   const selects = [
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
-    { src: "ZhlhUD685u0", base: 6, pat1: 485, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: "3lR7twYgDyU", base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "4B631Ow4S40", base: 6, pat1: 611, publisher: 'Latte' }, // Latte
     { src: "RoLi81fcvng", base: 6, pat1: 857, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "boC7RRiWL_0", base: 6, pat1:1037, publisher: 'めめんともり' }, // めめんともり
