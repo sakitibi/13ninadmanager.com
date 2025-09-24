@@ -27,7 +27,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "3lR7twYgDyU", base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "4B631Ow4S40", base: 6, pat1: 611, publisher: 'Latte' }, // Latte
     { src: "RoLi81fcvng", base: 6, pat1: 857, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: "boC7RRiWL_0", base: 6, pat1:1037, publisher: 'めめんともり' }, // めめんともり
+    { src: "6swStVmu9Is", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
     { src: "6TMwllJkCDo", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
     { src: "lT6qcYScuxE", base: 6, pat1: 522, publisher: 'みぞれch' }, // みぞれ
     { src: "v0xckWVpW2U", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
