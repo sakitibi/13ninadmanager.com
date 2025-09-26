@@ -29,7 +29,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "746DJxq0a7Y", base: 6, pat1: 827, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "6swStVmu9Is", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
     { src: "6TMwllJkCDo", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
-    { src: "lT6qcYScuxE", base: 6, pat1: 522, publisher: 'みぞれch' }, // みぞれ
+    { src: "EYeJk0AQ3J0", base: 6, pat1: 506, publisher: 'みぞれch' }, // みぞれ
     { src: "v0xckWVpW2U", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
     { src: "7eJTeiG83Uo", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
     { src: "GS0uYMSRXxc", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
