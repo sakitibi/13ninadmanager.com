@@ -30,19 +30,19 @@ function pickAdHooks(IsTrainBuildersHooks){
   }
   await fetched();
   const selects = [
-    { src: srcs[0], base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
-    { src: srcs[1], base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: srcs[2], base: 6, pat1: 611, publisher: 'Latte' }, // Latte
-    { src: srcs[3], base: 6, pat1: 711, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: srcs[4], base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
-    { src: srcs[5], base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
-    { src: srcs[6], base: 6, pat1: 506, publisher: 'みぞれch' }, // みぞれ
-    { src: srcs[7], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
-    { src: srcs[8], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
-    { src: srcs[9], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
-    { src: srcs[10], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
-    { src: srcs[11], base: 6, pat1: 699, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
-    { src: srcs[12], base: 6, pat1: 901, publisher: '茶子 / ゆっくり実況' } // 茶子 / ゆっくり実況
+    { src: srcs[0], pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
+    { src: srcs[1], pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: srcs[2], pat1: 611, publisher: 'Latte' }, // Latte
+    { src: srcs[3], pat1: 711, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: srcs[4], pat1:1035, publisher: 'めめんともり' }, // めめんともり
+    { src: srcs[5], pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
+    { src: srcs[6], pat1: 506, publisher: 'みぞれch' }, // みぞれ
+    { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
+    { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
+    { src: srcs[9], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
+    { src: srcs[10], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
+    { src: srcs[11], pat1: 699, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
+    { src: srcs[12], pat1: 901, publisher: '茶子 / ゆっくり実況' } // 茶子 / ゆっくり実況
   ];
 
   function shouldShowAd() {
@@ -60,7 +60,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const rndAdParam = (Math.floor(Math.random() * 11) === 10);
     const choice = selects[Math.floor(Math.random() * selects.length)];
     adData.src = `https://www.youtube.com/embed/${choice.src}`;
-    adData.skipCount = rndPattern ? choice.pat1 : choice.base;
+    adData.skipCount = rndPattern ? choice.pat1 : 6;
     if(!IsTrainBuilders){
       adData.adFlag = rndAdParam;
     }
