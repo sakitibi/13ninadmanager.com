@@ -28,7 +28,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const data = await res.json();
     srcs = data.src;
   }
-  fetched();
+  await fetched();
   const selects = [
     { src: srcs[0], base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
     { src: srcs[1], base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
