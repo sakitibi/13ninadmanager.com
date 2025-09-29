@@ -26,7 +26,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
     { src: "3lR7twYgDyU", base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: "uco7lnMyE60", base: 6, pat1: 611, publisher: 'Latte' }, // Latte
-    { src: "746DJxq0a7Y", base: 6, pat1: 827, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: "tDSKIli-89E", base: 6, pat1: 711, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: "6swStVmu9Is", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
     { src: "6TMwllJkCDo", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
     { src: "EYeJk0AQ3J0", base: 6, pat1: 506, publisher: 'みぞれch' }, // みぞれ
