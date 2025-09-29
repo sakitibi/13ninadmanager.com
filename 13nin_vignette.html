@@ -10,6 +10,10 @@
   <body>
     <script>
       const url = new URL(window.location.href);
+      const stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
+      document.head.appendChild(stylesheet);
       const iframe = document.createElement("iframe");
       iframe.id = "adVideo";
       iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}`;
