@@ -116,9 +116,8 @@ function pickAdHooks(IsTrainBuildersHooks){
     stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
     document.head.appendChild(stylesheet);
     const iframe = document.createElement("iframe");
-    iframe.id = "adVideo";
-    iframe.src = adData.src;
-    iframe.allow = "autoplay";
+    iframe.id = "adVideoFrame";
+    iframe.src = `https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=${adData.src}`;
     document.body.appendChild(iframe);
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
