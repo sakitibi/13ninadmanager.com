@@ -24,7 +24,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   const url = new URL(location.href);
   let srcs = [];
   async function fetched(){
-    const res = await fetch("https://asakura-wiki.vercel.app/api/ad/src");
+    const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
     const data = await res.json();
     srcs = data.src;
   }
