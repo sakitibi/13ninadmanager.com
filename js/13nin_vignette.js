@@ -22,20 +22,27 @@ function pickAdHooks(IsTrainBuildersHooks){
   let adData = {};
   let observer;
   const url = new URL(location.href);
+  let srcs = [];
+  async function fetched(){
+    const res = await fetch("https://asakura-wiki.vercel.app/api/ad/src");
+    const data = await res.json();
+    srcs = data.src;
+  }
+  fetched();
   const selects = [
-    { src: "S7O5-dFA420", base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
-    { src: "3lR7twYgDyU", base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: "uco7lnMyE60", base: 6, pat1: 611, publisher: 'Latte' }, // Latte
-    { src: "tDSKIli-89E", base: 6, pat1: 711, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: "6swStVmu9Is", base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
-    { src: "6TMwllJkCDo", base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
-    { src: "EYeJk0AQ3J0", base: 6, pat1: 506, publisher: 'みぞれch' }, // みぞれ
-    { src: "v0xckWVpW2U", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
-    { src: "7eJTeiG83Uo", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
-    { src: "GS0uYMSRXxc", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
-    { src: "zk_-tCv7bzE", base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
-    { src: "e-mqoayfaWk", base: 6, pat1: 699, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
-    { src: "MayOi2iFd6U", base: 6, pat1: 901, publisher: '茶子 / ゆっくり実況' } // 茶子 / ゆっくり実況
+    { src: srcs[0], base: 6, pat1: 140, publisher: '公益社団法人2025年日本国際博覧会協会' }, // 万博
+    { src: srcs[1], base: 6, pat1: 495, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: srcs[2], base: 6, pat1: 611, publisher: 'Latte' }, // Latte
+    { src: srcs[3], base: 6, pat1: 711, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: srcs[4], base: 6, pat1:1035, publisher: 'めめんともり' }, // めめんともり
+    { src: srcs[5], base: 6, pat1: 31, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
+    { src: srcs[6], base: 6, pat1: 506, publisher: 'みぞれch' }, // みぞれ
+    { src: srcs[7], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
+    { src: srcs[8], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
+    { src: srcs[9], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
+    { src: srcs[10], base: 6, pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
+    { src: srcs[11], base: 6, pat1: 699, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
+    { src: srcs[12], base: 6, pat1: 901, publisher: '茶子 / ゆっくり実況' } // 茶子 / ゆっくり実況
   ];
 
   function shouldShowAd() {
