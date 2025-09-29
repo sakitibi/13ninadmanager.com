@@ -16,7 +16,7 @@
       document.head.appendChild(stylesheet);
       const iframe = document.createElement("iframe");
       iframe.id = "adVideo";
-      iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}`;
+      iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}?autoplay=1&controls=0`;
       iframe.allow = "autoplay";
       document.body.appendChild(iframe);
     </script>
