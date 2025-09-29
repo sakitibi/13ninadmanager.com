@@ -1,0 +1,20 @@
+<!doctype html>
+<html class="" oncontextmenu="return false">
+  <head>
+    <title>13nin_vignette</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="9ixNnFdyt0L5GyekZS6NMUTbS-6wGqSWMedNQcKndL8">
+  </head>
+  <body>
+    <script>
+      const url = new URL(window.location.href);
+      const iframe = document.createElement("iframe");
+      iframe.id = "adVideo";
+      iframe.src = url.searchParams.get("src");
+      iframe.allow = "autoplay";
+      document.body.appendChild(iframe);
+    </script>
+  </body>
+</html>
