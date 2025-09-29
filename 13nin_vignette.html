@@ -9,34 +9,34 @@
   </head>
   <body>
     <script>
-      (async function(){
         let selects = [];
         async function fetched(){
           const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
           const data = await res.json();
           selects = data.src;
         }
-        await fetched();
-        const url = new URL(window.location.href);
-        let videoFlag = false;
-        for(let i = 0; i < selects.length; i++){
-            if(selects[i] === url.searchParams.get("src")){
-              videoFlag = true;
-              i = selects.length;
-            }
-        }
-        if(videoFlag){
-          const stylesheet = document.createElement("link");
-          stylesheet.rel = "stylesheet";
-          stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
-          document.head.appendChild(stylesheet);
-          const iframe = document.createElement("iframe");
-          iframe.id = "adVideo";
-          iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}?autoplay=1&controls=0`;
-          iframe.allow = "autoplay";
-          document.body.appendChild(iframe);
-        }
-      });
+        fetched();
+        setTimeout(() => {
+          const url = new URL(window.location.href);
+          let videoFlag = false;
+          for(let i = 0; i < selects.length; i++){
+              if(selects[i] === url.searchParams.get("src")){
+                videoFlag = true;
+                i = selects.length;
+              }
+          }
+          if(videoFlag){
+            const stylesheet = document.createElement("link");
+            stylesheet.rel = "stylesheet";
+            stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
+            document.head.appendChild(stylesheet);
+            const iframe = document.createElement("iframe");
+            iframe.id = "adVideo";
+            iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}?autoplay=1&controls=0`;
+            iframe.allow = "autoplay";
+            document.body.appendChild(iframe);
+          }
+        }, 100);
     </script>
   </body>
 </html>
