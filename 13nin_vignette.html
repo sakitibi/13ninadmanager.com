@@ -11,9 +11,13 @@
     <script>
         let selects = [];
         async function fetched(){
-          const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
-          const data = await res.json();
-          selects = data.src;
+          try{
+            const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
+            const data = await res.json();
+            selects = data.src;
+          }catch(e){
+            console.error("fetchエラー: ", e);
+          }
         }
         fetched();
         setTimeout(() => {
@@ -35,6 +39,8 @@
             iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}?autoplay=1&controls=0`;
             iframe.allow = "autoplay";
             document.body.appendChild(iframe);
+          } else {
+            console.warn("videoFlagがfalseです!");
           }
         }, 100);
     </script>
