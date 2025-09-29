@@ -17,7 +17,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     adHookings = true;
   }
 }
-(function(){
+(async function(){
   'use strict';
   let adData = {};
   let observer;
