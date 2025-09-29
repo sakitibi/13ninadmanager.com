@@ -9,21 +9,13 @@
   </head>
   <body>
     <script>
-      const selects = [
-        "S7O5-dFA420",
-        "3lR7twYgDyU",
-        "uco7lnMyE60",
-        "tDSKIli-89E",
-        "6swStVmu9Is",
-        "6TMwllJkCDo",
-        "EYeJk0AQ3J0",
-        "v0xckWVpW2U",
-        "7eJTeiG83Uo",
-        "GS0uYMSRXxc",
-        "zk_-tCv7bzE",
-        "e-mqoayfaWk",
-        "MayOi2iFd6U"
-      ];
+      let selects = [];
+      async function fetched(){
+        const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
+        const data = await res.json();
+        selects = data.src;
+      }
+      fetched();
       const url = new URL(window.location.href);
       let videoFlag = false;
       for(let i = 0; i < selects.length; i++){
