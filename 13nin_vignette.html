@@ -16,7 +16,7 @@
           const data = await res.json();
           selects = data.src;
         }
-        fetched();
+        await fetched();
         const url = new URL(window.location.href);
         let videoFlag = false;
         for(let i = 0; i < selects.length; i++){
