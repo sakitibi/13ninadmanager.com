@@ -52,7 +52,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     const rndPattern = Math.random() < 0.5 ? 1 : 0;
     const rndAdParam = (Math.floor(Math.random() * 11) === 10);
     const choice = selects[Math.floor(Math.random() * selects.length)];
-    adData.src = `https://www.youtube.com/embed/${choice.src}?autoplay=1&controls=0`;
+    adData.src = `https://www.youtube.com/embed/${choice.src}`;
     adData.skipCount = rndPattern ? choice.pat1 : choice.base;
     if(!IsTrainBuilders){
       adData.adFlag = rndAdParam;
@@ -117,7 +117,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     document.head.appendChild(stylesheet);
     const iframe = document.createElement("iframe");
     iframe.id = "adVideoFrame";
-    iframe.src = `https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=${adData.src}`;
+    iframe.src = `https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=${adData.src.slice(30,adData.src.length)}`;
     document.body.appendChild(iframe);
     const skip = document.createElement("button");
     skip.id = "skipAdButton";
