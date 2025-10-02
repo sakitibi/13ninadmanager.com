@@ -100,7 +100,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     isAdPlaying = false;
     if(IsTrainBuilders){
       isAdPlayingTBA = false;
-      localStorage.setItem("isAdPlayingTBA", isAdPlayingTBA);
+      localStorage.setItem("isAdPlayingTBA", false);
     }
     if (observer) observer.disconnect();
     cache.iframeNode = null;
