@@ -38,7 +38,7 @@
             selectsArrayGetItem();
           }
         }
-        function selectsArrayGetItem(){
+        async function selectsArrayGetItem(){
           for(let i = 0; i < selects.length; i++){
             if(selects[i] === url.searchParams.get("src")){
               videoFlag = true;
