@@ -67,21 +67,21 @@ function pickAdHooks(IsTrainBuildersHooks){
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
   }
+
+  pickAd();
   
   if (adData.adFlag && shouldShowAd() && !IsTrainBuilders) {
     url.searchParams.set("ad", "google_vignette");
     history.replaceState({}, '', url);
   }
 
-    if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
-      pickAd();
-      playAdVideo();
-    }
+  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
+    playAdVideo();
+  }
   
   const adHookingInterval = setInterval(() => {
       if(IsTrainBuilders){
         if(adHookings === true){
-          pickAd();
           playAdVideo();
         }
       }
