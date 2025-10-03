@@ -51,7 +51,9 @@
           const url = new URL(window.location.href);
           let videoFlag = false;
           selectsArrayGetItem(url, videoFlag);
-          isVideoFlag(url, videoFlag);
+          setTimeout(() => {
+            isVideoFlag(url, videoFlag);
+          }, 100);
         }, 100);
     </script>
   </body>
