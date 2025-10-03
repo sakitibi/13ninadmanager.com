@@ -30,12 +30,12 @@
           iframe.allow = "autoplay";
           document.body.appendChild(iframe);
         }
-        function isVideoFlag(){
+        function isVideoFlag(url){
           if(videoFlag){
             adGenerate();
           } else {
             console.warn("videoFlagがfalseです!");
-            selectsArrayGetItem();
+            selectsArrayGetItem(url);
           }
         }
         function selectsArrayGetItem(url){
@@ -51,7 +51,7 @@
           const url = new URL(window.location.href);
           let videoFlag = false;
           selectsArrayGetItem(url);
-          isVideoFlag();
+          isVideoFlag(url);
         }, 100);
     </script>
   </body>
