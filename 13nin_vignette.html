@@ -51,7 +51,9 @@
         fetched();
         setTimeout(() => {
           selectsArrayGetItem();
-          isVideoFlag();
+          setTimeout(() => {
+            isVideoFlag();
+          }, 100);
         }, 100);
     </script>
   </body>
