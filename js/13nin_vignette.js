@@ -150,6 +150,15 @@ function pickAdHooks(IsTrainBuildersHooks){
     sponsorInline.textContent = `スポンサー: ${adData.publisher}`;
     sponsorRow.appendChild(sponsorInline);
 
+    const detailsContainer = document.createElement("div");
+    detailsContainer.id = "details-container";
+    document.body.appendChild(detailsContainer);
+
+    const detailsButton = document.createElement("button");
+    detailsButton.id = "detailsButton";
+    detailsButton.textContent = "詳細";
+    document.body.appendChild(detailsButton);
+
     const span = document.createElement("span");
     span.textContent = `スキップ あと${adData.skipCount}秒`;
     skip.appendChild(span);
