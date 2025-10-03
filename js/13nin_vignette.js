@@ -72,6 +72,11 @@ function pickAdHooks(IsTrainBuildersHooks){
     url.searchParams.set("ad", "google_vignette");
     history.replaceState({}, '', url);
   }
+
+    if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
+      pickAd();
+      playAdVideo();
+    }
   
   const adHookingInterval = setInterval(() => {
       if(IsTrainBuilders){
@@ -161,10 +166,6 @@ function pickAdHooks(IsTrainBuildersHooks){
           }
       }, 1000);
     }
-  if (url.searchParams.get("ad") === 'google_vignette' && shouldShowAd() && !IsTrainBuilders) {
-    pickAd();
-    playAdVideo();
-  }
 
   setInterval(() => {
     pickAd();
