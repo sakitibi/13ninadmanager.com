@@ -38,6 +38,9 @@
           } else {
             console.warn("videoFlagがfalseです!");
             selectsArrayGetItem();
+            setTimeout(() => {
+              isVideoFlag();
+            }, 100);
           }
         }
         function selectsArrayGetItem(){
