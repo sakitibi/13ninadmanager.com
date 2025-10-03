@@ -154,10 +154,24 @@ function pickAdHooks(IsTrainBuildersHooks){
     detailsContainer.id = "details-container";
     document.body.appendChild(detailsContainer);
 
+    const detailsDescContainer = document.createElement("div");
+    detailsDescContainer.id = "detailsDescriptionContainer";
+    detailsContainer.appendChild(detailsDescContainer);
+
+    const detailsDescTexts = document.createElement("div");
+    detailsDescTexts.id = "detailsDescriptionTexts";
+    detailsDescTexts.textContent = adData.description ?? "";
+    detailsDescContainer.appendChild(detailsDescTexts);
+
+    const detailsDescUrls = document.createElement("div");
+    detailsDescUrls.id = "detailsDescriptionUrls";
+    detailsDescUrls.textContent = adData.urls ?? "";
+    detailsDescContainer.appendChild(detailsDescUrls);
+
     const detailsButton = document.createElement("button");
     detailsButton.id = "detailsButton";
     detailsButton.textContent = "詳細";
-    document.body.appendChild(detailsButton);
+    detailsContainer.appendChild(detailsButton);
 
     const span = document.createElement("span");
     span.textContent = `スキップ あと${adData.skipCount}秒`;
