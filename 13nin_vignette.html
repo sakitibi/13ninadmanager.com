@@ -47,10 +47,10 @@
           }
         }
         fetched();
-        setTimeout(() => {
+        setTimeout(async() => {
           const url = new URL(window.location.href);
           let videoFlag = false;
-          selectsArrayGetItem();
+          await selectsArrayGetItem();
           isVideoFlag();
         }, 100);
     </script>
