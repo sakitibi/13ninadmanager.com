@@ -10,6 +10,8 @@
   <body>
     <script>
         let selects = [];
+        const url = new URL(window.location.href);
+        let videoFlag = false;
         async function fetched(){
           try{
             const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
@@ -30,15 +32,15 @@
           iframe.allow = "autoplay";
           document.body.appendChild(iframe);
         }
-        function isVideoFlag(url, videoFlag){
+        function isVideoFlag(){
           if(videoFlag){
             adGenerate();
           } else {
             console.warn("videoFlagがfalseです!");
-            selectsArrayGetItem(url, videoFlag);
+            selectsArrayGetItem();
           }
         }
-        function selectsArrayGetItem(url, videoFlag){
+        function selectsArrayGetItem(){
           for(let i = 0; i < selects.length; i++){
             if(selects[i] === url.searchParams.get("src")){
               videoFlag = true;
@@ -48,12 +50,8 @@
         }
         fetched();
         setTimeout(() => {
-          const url = new URL(window.location.href);
-          let videoFlag = false;
-          selectsArrayGetItem(url, videoFlag);
-          setTimeout(() => {
-            isVideoFlag(url, videoFlag);
-          }, 100);
+          selectsArrayGetItem();
+          isVideoFlag();
         }, 100);
     </script>
   </body>
