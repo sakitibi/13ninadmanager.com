@@ -38,7 +38,7 @@
             selectsArrayGetItem();
           }
         }
-        async function selectsArrayGetItem(){
+        function selectsArrayGetItem(url){
           for(let i = 0; i < selects.length; i++){
             if(selects[i] === url.searchParams.get("src")){
               videoFlag = true;
@@ -47,10 +47,10 @@
           }
         }
         fetched();
-        setTimeout(async() => {
+        setTimeout(() => {
           const url = new URL(window.location.href);
           let videoFlag = false;
-          await selectsArrayGetItem();
+          selectsArrayGetItem(url);
           isVideoFlag();
         }, 100);
     </script>
