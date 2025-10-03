@@ -67,7 +67,12 @@ function pickAdHooks(IsTrainBuildersHooks){
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
   }
-
+  
+  if (adData.adFlag && shouldShowAd() && !IsTrainBuilders) {
+    url.searchParams.set("ad", "google_vignette");
+    history.replaceState({}, '', url);
+  }
+  
   const adHookingInterval = setInterval(() => {
       if(IsTrainBuilders){
         if(adHookings === true){
@@ -76,11 +81,6 @@ function pickAdHooks(IsTrainBuildersHooks){
         }
       }
   }, 50);
-
-  if (adData.adFlag && shouldShowAd() && !IsTrainBuilders) {
-    url.searchParams.set("ad", "google_vignette");
-    history.replaceState({}, '', url);
-  }
 
   function skipButtonClick(
     iframe,
