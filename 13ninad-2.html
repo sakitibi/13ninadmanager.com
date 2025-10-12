@@ -25,15 +25,29 @@
   </head>
   <meta name="google-site-verification" content="9ixNnFdyt0L5GyekZS6NMUTbS-6wGqSWMedNQcKndL8">
   <body>
-    <iframe width="300" height="190" src="https://www.youtube.com/embed/S7O5-dFA420" title="🔴🔵まもなく開幕大阪・関西万博／EXPO2025 is Almost Here!🔵🔴" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-    <button id="expo">詳しくはこちら</button>
-    <script>
-      document.getElementById("expo").addEventListener("click", function(){
-        let url = 'https://13ninadmanagerclick.vercel.app/JTM1gqYGcnm_gmBF7DkvQTamS_qu8UQLlj7mlxVNgc9KjQumE_zS4EuscS3N6ndncD26IwOEQoy81EXJGAPFb0bwpnpZG2r6dk75afal5Tv8T3ATw-I_kcK3CywKFUgvRBg-gTGTerTvHIB6ysuxvbQd7sif1UWTHwptujuEcUaxUS-F';
-        window.open(url, '_blank')  
-      });
-    </script>
-    <script src="https://sakitibi.github.io/NMNGyuri-hihan-api/nmngyuri-loop-alert.js"></script>
+    <div id="contents-wrapper">
+      <div id="sponsor-contents">
+      <iframe width="300" height="190" src="https://www.youtube.com/embed/S7O5-dFA420" title="🔴🔵まもなく開幕大阪・関西万博／EXPO2025 is Almost Here!🔵🔴" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <button id="expo">詳しくはこちら</button>
+      <script>
+        document.getElementById("expo").addEventListener("click", function(){
+          let url = 'https://13ninadmanagerclick.vercel.app/JTM1gqYGcnm_gmBF7DkvQTamS_qu8UQLlj7mlxVNgc9KjQumE_zS4EuscS3N6ndncD26IwOEQoy81EXJGAPFb0bwpnpZG2r6dk75afal5Tv8T3ATw-I_kcK3CywKFUgvRBg-gTGTerTvHIB6ysuxvbQd7sif1UWTHwptujuEcUaxUS-F';
+          window.open(url, '_blank')  
+        });
+        setInterval(() => {
+          if(new Date().getDate() > 13){
+            document.getElementById("sponsor-contents").innerHTML = (`
+              <p>この広告は、掲載期間が終了しました。</p>
+            `);
+          }
+        }, 1000);
+      </script>
+      <script src="https://sakitibi.github.io/NMNGyuri-hihan-api/nmngyuri-loop-alert.js"></script>
+      </div>
+      <div id="templates">
+        <small style="color: #ccc">この広告は13ninstudioが表示しています、</small>
+      </div>
+    </div>
   </body>
 </html>
