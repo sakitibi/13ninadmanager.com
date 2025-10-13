@@ -4,7 +4,6 @@ const SakitibiAdmanager = "https://sakitibi.github.io/13ninadmanager.com/";
 const urls = [
     `${SakitibiAdmanager}SuperNewRoles-Logo`,
     `${SakitibiAdmanager}13ninad-1`,
-    `${SakitibiAdmanager}13ninad-2`,
     `${SakitibiAdmanager}SKNewRoles-Logo`,
     // 100
     `${SakitibiAdmanager}13ninad-3`,
