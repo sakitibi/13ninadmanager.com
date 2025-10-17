@@ -96,6 +96,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     detailsContainer,
     stylesheet
   ){
+    console.log("ad skiped");
     localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
     iframe.remove();
     skip.remove();
