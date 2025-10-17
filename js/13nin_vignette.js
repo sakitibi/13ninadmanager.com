@@ -48,9 +48,9 @@ function pickAdHooks(IsTrainBuildersHooks){
   function shouldShowAd() {
     const last = parseInt(localStorage.getItem("lastAdShown") || "0", 10);
     if(location.origin === "https://sakitibi.github.io" || location.origin === "https://asakura-wiki.vercel.app"){
-      return (Date.now() - last) > 1800000;
+      return (Date.now() - last) > 18e5;
     } else {
-      return (Date.now() - last) > 900000;
+      return (Date.now() - last) > 9e5;
     }
   }
 
@@ -198,7 +198,7 @@ function pickAdHooks(IsTrainBuildersHooks){
             skip.disabled = false;
             span.textContent = "スキップ";
           }
-      }, 1000);
+      }, 1e3);
     }
 
   setInterval(() => {
@@ -208,7 +208,7 @@ function pickAdHooks(IsTrainBuildersHooks){
       history.replaceState({}, '', url);
       playAdVideo();
     }
-  }, 150000);
+  }, 15e4);
 
   const cache = { videoButtonParent: null, iframeNode: null, buttonNode: null };
 
