@@ -98,19 +98,29 @@ function pickAdHooks(IsTrainBuildersHooks){
   ){
     console.log("ad skiped");
     localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
-    iframe.remove();
-    skip.remove();
-    sponsorInline.remove();
-    sponsorRow.remove();
-    sponsor.remove();
-    detailsContainer.remove();
-    stylesheet.remove();
+    while(!!iframe){
+      iframe.remove();
+    }
+    while(!!skip){
+      skip.remove();
+    }
+    while(!!sponsor){
+      sponsor.remove();
+    }
+    while(!!detailsContainer){
+      detailsContainer.remove();
+    }
+    while(!!stylesheet){
+      stylesheet.remove();
+    }
     isAdPlaying = false;
     if(IsTrainBuilders){
       isAdPlayingTBA = false;
       localStorage.setItem("isAdPlayingTBA", false);
     }
-    if (observer) observer.disconnect();
+    while(observer){
+      observer.disconnect();
+    }
     cache.iframeNode = null;
     cache.buttonNode = null;
     if (IsTrainBuilders){
