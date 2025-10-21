@@ -110,11 +110,11 @@ function pickAdHooks(IsTrainBuildersHooks){
     sponsor.remove();
     detailsContainer.remove();
     stylesheet.remove();
-    isAdPlaying = false;
     if(IsTrainBuilders){
       isAdPlayingTBA = false;
       localStorage.setItem("isAdPlayingTBA", false);
     }
+    isAdPlaying = false;
     if (IsTrainBuilders){
       if(gPhase === 8){
            message1.innerHTML = "";
