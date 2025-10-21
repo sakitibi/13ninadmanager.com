@@ -55,7 +55,6 @@ function pickAdHooks(IsTrainBuildersHooks){
   }
 
   function pickAd() {
-    adHookings = false;
     const rndPattern = Math.random() < 0.5 ? 1 : 0;
     const rndAdParam = (Math.floor(Math.random() * 11) === 10);
     const choice = selects[Math.floor(Math.random() * selects.length)];
@@ -127,6 +126,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     if (isAdPlaying) return;
     isAdPlaying = true;
     if(IsTrainBuilders){
+      adHookings = false;
       isAdPlayingTBA = true;
     }
     const stylesheet = document.createElement("link");
