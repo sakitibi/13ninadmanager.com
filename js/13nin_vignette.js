@@ -101,6 +101,9 @@ function pickAdHooks(IsTrainBuildersHooks){
       detailsContainer,
       stylesheet,
     });
+    observer.disconnect();
+    cache.iframeNode = null;
+    cache.buttonNode = null;
     localStorage.setItem("lastAdShown", Date.now()); // ← ここで記録
     iframe.remove();
     skip.remove();
@@ -112,9 +115,6 @@ function pickAdHooks(IsTrainBuildersHooks){
       isAdPlayingTBA = false;
       localStorage.setItem("isAdPlayingTBA", false);
     }
-    observer.disconnect();
-    cache.iframeNode = null;
-    cache.buttonNode = null;
     if (IsTrainBuilders){
       if(gPhase === 8){
            message1.innerHTML = "";
