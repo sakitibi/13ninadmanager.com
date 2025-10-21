@@ -143,8 +143,6 @@ function pickAdHooks(IsTrainBuildersHooks){
     skip.addEventListener("click", () => skipButtonClick(
       iframe,
       skip,
-      sponsorInline,
-      sponsorRow,
       sponsor,
       detailsContainer,
       stylesheet
