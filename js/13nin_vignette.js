@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         13nin_vignette＋復元ガード (完全版＋30分ブロック)
-// @version      2.0.30
+// @version      2.0.40
 // @description  動的広告表示＋要素復元ガード＋スキップ後30分非表示
 // @match        *://*/*
 // @grant        none
@@ -35,7 +35,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: srcs[2], pat1: 843, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: srcs[3], pat1:1028, publisher: 'めめんともり' }, // めめんともり
     { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
-    { src: srcs[5], pat1: 537, publisher: 'みぞれch' }, // みぞれ
+    { src: srcs[5], pat1: 551, publisher: 'みぞれch' }, // みぞれ
     { src: srcs[6], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
     { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
     { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
