@@ -30,7 +30,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   }
   await fetched();
   const selects = [
-    { src: srcs[0], pat1: 490, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
+    { src: srcs[0], pat1: 483, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: srcs[1], pat1: 717, publisher: 'Latte' }, // Latte
     { src: srcs[2], pat1: 843, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: srcs[3], pat1:1028, publisher: 'めめんともり' }, // めめんともり
