@@ -31,7 +31,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   await fetched();
   const selects = [
     { src: srcs[0], pat1: 516, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: srcs[1], pat1: 816, publisher: 'Latte' }, // Latte
+    { src: srcs[1], pat1: 810, publisher: 'Latte' }, // Latte
     { src: srcs[2], pat1: 887, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: srcs[3], pat1:1070, publisher: 'めめんともり' }, // めめんともり
     { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅰ
