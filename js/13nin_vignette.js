@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         13nin_vignette＋復元ガード (完全版＋30分ブロック)
-// @version      2.0.40
+// @version      2.0.50
 // @description  動的広告表示＋要素復元ガード＋スキップ後30分非表示
 // @match        *://*/*
 // @grant        none
@@ -32,7 +32,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   const selects = [
     { src: srcs[0], pat1: 526, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: srcs[1], pat1: 834, publisher: 'Latte' }, // Latte
-    { src: srcs[2], pat1: 942, publisher: 'ヒナの隠れ家' }, // ひなにい
+    { src: srcs[2], pat1: 938, publisher: 'ヒナの隠れ家' }, // ひなにい
     { src: srcs[3], pat1: 923, publisher: 'めめんともり' }, // めめんともり
     { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 Luna ⅠⅠ
     { src: srcs[5], pat1: 619, publisher: 'みぞれch' }, // みぞれ
