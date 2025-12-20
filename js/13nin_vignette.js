@@ -33,9 +33,9 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: srcs[0], pat1: 503, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
     { src: srcs[1], pat1: 698, publisher: 'Latte' }, // Latte
     { src: srcs[2], pat1: 760, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: srcs[3], pat1:1014, publisher: 'めめんともり' }, // めめんともり
+    { src: srcs[3], pat1:1059, publisher: 'めめんともり' }, // めめんともり
     { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅲ
-    { src: srcs[5], pat1: 513, publisher: 'みぞれch' }, // みぞれ
+    { src: srcs[5], pat1: 500, publisher: 'みぞれch' }, // みぞれ
     { src: srcs[6], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
     { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
     { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
