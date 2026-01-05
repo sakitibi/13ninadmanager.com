@@ -40,7 +40,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
     { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
     { src: srcs[9], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
-    { src: srcs[10], pat1: 736, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
+    { src: srcs[10], pat1: 811, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
     { src: srcs[11], pat1: 827, publisher: '茶子 / ゆっくり実況' }, // 茶子 / ゆっくり実況
     { src: srcs[12], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars5
     { src: srcs[13], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars6
