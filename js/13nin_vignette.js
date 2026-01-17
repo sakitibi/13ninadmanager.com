@@ -29,23 +29,24 @@ function pickAdHooks(IsTrainBuildersHooks){
     srcs = data.src;
   }
   await fetched();
+  const site_baseurl = "https://13ninadmanagerclick.vercel.app/ck/";
   const selects = [
-    { src: srcs[0], pat1: 492, publisher: 'メテヲs7のゆっくり実況部屋' }, // メテヲ
-    { src: srcs[1], pat1: 697, publisher: 'Latte' }, // Latte
-    { src: srcs[2], pat1: 910, publisher: 'ヒナの隠れ家' }, // ひなにい
-    { src: srcs[3], pat1: 1100, publisher: 'めめんともり' }, // めめんともり
-    { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式' }, // 原神 Luna Ⅲ
-    { src: srcs[5], pat1: 500, publisher: 'みぞれch' }, // みぞれ
-    { src: srcs[6], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars1
-    { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars2
-    { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars3
-    { src: srcs[9], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars4
-    { src: srcs[10], pat1: 711, publisher: 'ゆっくりウパパロン' }, // ゆっくりウパパロン
-    { src: srcs[11], pat1: 588, publisher: '茶子 / ゆっくり実況' }, // 茶子 / ゆっくり実況
-    { src: srcs[12], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars5
-    { src: srcs[13], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars6
-    { src: srcs[14], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars6別バージョン
-    { src: srcs[15], pat1: 18, publisher: 'WECARS ウィーカーズ' }, // Wecars7
+    { src: srcs[0], pat1: 492, publisher: 'メテヲs7のゆっくり実況部屋', site: `${site_baseurl}9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu` }, // メテヲ
+    { src: srcs[1], pat1: 697, publisher: 'Latte', site: `${site_baseurl}QxmTxWxnD4zsAHrRTDLW4ObxvHec4diHfmoCDhYhkWAW5XgFacyKtUAkfigfUTE48dceqhY2yBmCCgWZOdvfl_GWjAPUEoFMShziSNGH-U2swvis6crubVcdIMs-Q72cgcSs_S3av6rCC3UIsXyMKsYe1qqEHez4trJ` }, // Latte
+    { src: srcs[2], pat1: 910, publisher: 'ヒナの隠れ家', site: `${site_baseurl}IwV62n9DIUgcOfQSYSPBSWPsnSAypR-NJG6LVjSzRImGzvrKjyVEqoM7hC7Gil-O7QJ_3bj7WnpOKQEvkcyu7Nxtl4tgT8GdrVl5cdamSzhmEufQKkpDr4YwIzDZ79I54aW42c_kQZsQZvmCCw165t4SUmMFh0bP7uePJlyCaXBB3mtHuMyroZk9` }, // ひなにい
+    { src: srcs[3], pat1: 1100, publisher: 'めめんともり', site: `${site_baseurl}TKQVLhl2WhWwQ82S6OqY3-vXny3k3cs-ORby3iXuGvRjwtU6L8kVnCrFv2QHgoop-KxTovTdn6d_QRjqZFWAI7WsHmLLOTkVhY2tAujmyUouoBcNUOzwfj` }, // めめんともり
+    { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式', site: `${site_baseurl}wfT-jXAd_ayThE7j615gVbniRpgB2cGb02osMmyOhy9DvK1_kzZZDIe60hxbk8OHK2tguZ7xac83Yl26qaVm4ZHN46GKdf6k5kS5q1aH7Q` }, // 原神 Luna Ⅳ
+    { src: srcs[5], pat1: 500, publisher: 'みぞれch', site: `${site_baseurl}F0qm-fkYK8ZZN8jnr077MMu4Zl9E8rhmEeimB_ax8KJcy6UqhzbhqgbG6FtPsr3G3kerRXU7KFP-39-V0QRb7CNZojGyK2Xe2pXsDc7W2m6nVjZmcYeHRL` }, // みぞれ
+    { src: srcs[6], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars1
+    { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars2
+    { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars3
+    { src: srcs[9], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars4
+    { src: srcs[10], pat1: 711, publisher: 'ゆっくりウパパロン', site: `${site_baseurl}Flhv9cz5_Nl143zsAcuVhkyv1NicSoU4tv9bfMQJdbVkogsEzROVkvZY0na8rZg0-klWelCsgeXC2VWJDW9MO5dIsTp4jD6ZSbw2hTpG7RD_UhOegX2zzXfxFGvDvcF3Ed0Otsg7Tf-` }, // ゆっくりウパパロン
+    { src: srcs[11], pat1: 588, publisher: '茶子 / ゆっくり実況', site: `${site_baseurl}DFtDSz_Gd9ln2mtRBn3jGzy8gk8ofJpOEsD5zUEV87csq3epjwwziPdP6Lf6vbjzeBOLC61WPfqPMI4NMg56-MT-nLYX9RkPfBTkf3XYxeW56l3krEwjgmI` }, // 茶子 / ゆっくり実況
+    { src: srcs[12], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars5
+    { src: srcs[13], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars6
+    { src: srcs[14], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars6別バージョン
+    { src: srcs[15], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}7J-88erQA96516i228AN80sTOrfyzV57xGdtTsLENxVMUkFs7Q1YJgxieVDz5YJJyGdY55jbj0IqU25tJblUlUxI8vxMNMXQRqU_HPdlsn0X6zSns4noz6nglpG02nqgiX1wh_HJPwWafhsXeXI2vxMls_0bS0qZZP1-Gpc` }, // Wecars7
   ];
 
   function shouldShowAd() {
@@ -185,8 +186,12 @@ function pickAdHooks(IsTrainBuildersHooks){
 
     const detailsButton = document.createElement("button");
     detailsButton.id = "detailsButton";
-    detailsButton.textContent = "詳細";
     detailsContainer.appendChild(detailsButton);
+
+    const detailsButtonInline = document.createElement("span");
+    detailsButtonInline.id = "detailsButtonInline";
+    detailsButtonInline.textContent = "詳細";
+    detailsButton.appendChild(detailsButtonInline);
 
     const span = document.createElement("span");
     span.textContent = `スキップ あと${adData.skipCount}秒`;
