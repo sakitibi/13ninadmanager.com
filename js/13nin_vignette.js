@@ -70,6 +70,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
     adData.site = choice.site ?? "./";
+    console.log("adData: ", adData);
   }
 
   pickAd();
@@ -99,13 +100,6 @@ function pickAdHooks(IsTrainBuildersHooks){
     detailsContainer,
     stylesheet
   ){
-    console.log("ad skiped", {
-      iframe,
-      skip,
-      sponsor,
-      detailsContainer,
-      stylesheet,
-    });
     observer.disconnect();
     cache.iframeNode = null;
     cache.buttonNode = null;
