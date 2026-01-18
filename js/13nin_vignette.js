@@ -69,6 +69,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     }
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
+    adData.site = choice.site ?? "./";
   }
 
   pickAd();
@@ -188,7 +189,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     detailsButton.id = "detailsButton";
     detailsButton.addEventListener("click", () => {
       window.open(adData.site ?? "./", "_blank")
-    })
+    });
     detailsContainer.appendChild(detailsButton);
 
     const detailsButtonInline = document.createElement("span");
