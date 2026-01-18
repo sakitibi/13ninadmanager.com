@@ -186,6 +186,9 @@ function pickAdHooks(IsTrainBuildersHooks){
 
     const detailsButton = document.createElement("button");
     detailsButton.id = "detailsButton";
+    detailsButton.click = () => {
+      window.open(adData.site ?? "./", "_blank")
+    }
     detailsContainer.appendChild(detailsButton);
 
     const detailsButtonInline = document.createElement("span");
