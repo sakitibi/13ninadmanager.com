@@ -10,6 +10,7 @@ let adHookings = false;
 let IsTrainBuilders = false;
 let isAdPlaying = false;
 function pickAdHooks(IsTrainBuildersHooks){
+  console.log("pickAdHooks called");
   if(IsTrainBuildersHooks){
     IsTrainBuilders = true;
   }
@@ -86,6 +87,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   const adHookingInterval = setInterval(() => {
       if(IsTrainBuilders){
         if(adHookings === true){
+          console.log("playAdVideo of TrainBuilders");
           pickAd();
           playAdVideo();
         }
