@@ -71,6 +71,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     adData.pattern = rndPattern;
     adData.publisher = choice.publisher ?? '不明';
     adData.site = choice.site ?? "./";
+    console.log("adData: ", adData);
   }
 
   pickAd();
