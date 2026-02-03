@@ -89,6 +89,7 @@ function pickAdHooks(IsTrainBuildersHooks){
       if(IsTrainBuilders){
         if(adHookings === true){
           console.log("playAdVideo of TrainBuilders");
+          adHookings = false;
           pickAd();
           playAdVideo();
         }
@@ -128,7 +129,6 @@ function pickAdHooks(IsTrainBuildersHooks){
     if (isAdPlaying) return;
     isAdPlaying = true;
     if(IsTrainBuilders){
-      adHookings = false;
       isAdPlayingTBA = true;
     }
     const stylesheet = document.createElement("link");
