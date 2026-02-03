@@ -183,7 +183,11 @@ function pickAdHooks(IsTrainBuildersHooks){
     const detailsButton = document.createElement("button");
     detailsButton.id = "detailsButton";
     detailsButton.addEventListener("click", () => {
-      window.open(adData.site ?? "./", "_blank")
+      if(IsTrainBuilders){
+        sessionStorage.setItem("open_adlink", adData.site ?? "./");
+      } else {
+        window.open(adData.site ?? "./", "_blank")
+      }
     });
     detailsContainer.appendChild(detailsButton);
 
