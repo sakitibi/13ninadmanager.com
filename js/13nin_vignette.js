@@ -9,8 +9,11 @@
 let adHookings = false;
 let IsTrainBuilders = false;
 let isAdPlaying = false;
+let hooks_counter = 0;
 function pickAdHooks(IsTrainBuildersHooks){
+  if(hooks_counter > 0) return;
   console.log("pickAdHooks called");
+  hooks_counter++;
   if(IsTrainBuildersHooks){
     IsTrainBuilders = true;
   }
@@ -104,6 +107,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     detailsContainer,
     stylesheet
   ){
+    hooks_counter = 0;
     observer.disconnect();
     cache.iframeNode = null;
     cache.buttonNode = null;
