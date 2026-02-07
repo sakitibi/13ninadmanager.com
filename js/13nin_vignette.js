@@ -37,7 +37,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   const selects = [
     { src: srcs[0], pat1: 539, publisher: 'メテヲs7のゆっくり実況部屋', site: `${site_baseurl}9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu` }, // メテヲ
     { src: srcs[1], pat1: 649, publisher: 'Latte', site: `${site_baseurl}QxmTxWxnD4zsAHrRTDLW4ObxvHec4diHfmoCDhYhkWAW5XgFacyKtUAkfigfUTE48dceqhY2yBmCCgWZOdvfl_GWjAPUEoFMShziSNGH-U2swvis6crubVcdIMs-Q72cgcSs_S3av6rCC3UIsXyMKsYe1qqEHez4trJ` }, // Latte
-    { src: srcs[2], pat1: 866, publisher: 'ヒナの隠れ家', site: `${site_baseurl}IwV62n9DIUgcOfQSYSPBSWPsnSAypR-NJG6LVjSzRImGzvrKjyVEqoM7hC7Gil-O7QJ_3bj7WnpOKQEvkcyu7Nxtl4tgT8GdrVl5cdamSzhmEufQKkpDr4YwIzDZ79I54aW42c_kQZsQZvmCCw165t4SUmMFh0bP7uePJlyCaXBB3mtHuMyroZk9` }, // ひなにい
+    { src: srcs[2], pat1: 998, publisher: 'ヒナの隠れ家', site: `${site_baseurl}IwV62n9DIUgcOfQSYSPBSWPsnSAypR-NJG6LVjSzRImGzvrKjyVEqoM7hC7Gil-O7QJ_3bj7WnpOKQEvkcyu7Nxtl4tgT8GdrVl5cdamSzhmEufQKkpDr4YwIzDZ79I54aW42c_kQZsQZvmCCw165t4SUmMFh0bP7uePJlyCaXBB3mtHuMyroZk9` }, // ひなにい
     { src: srcs[3], pat1: 1072, publisher: 'めめんともり', site: `${site_baseurl}TKQVLhl2WhWwQ82S6OqY3-vXny3k3cs-ORby3iXuGvRjwtU6L8kVnCrFv2QHgoop-KxTovTdn6d_QRjqZFWAI7WsHmLLOTkVhY2tAujmyUouoBcNUOzwfj` }, // めめんともり
     { src: srcs[4], pat1: 32, publisher: '原神-Genshin-公式', site: `${site_baseurl}wfT-jXAd_ayThE7j615gVbniRpgB2cGb02osMmyOhy9DvK1_kzZZDIe60hxbk8OHK2tguZ7xac83Yl26qaVm4ZHN46GKdf6k5kS5q1aH7Q` }, // 原神 Luna Ⅳ
     { src: srcs[5], pat1: 544, publisher: 'みぞれch', site: `${site_baseurl}F0qm-fkYK8ZZN8jnr077MMu4Zl9E8rhmEeimB_ax8KJcy6UqhzbhqgbG6FtPsr3G3kerRXU7KFP-39-V0QRb7CNZojGyK2Xe2pXsDc7W2m6nVjZmcYeHRL` }, // みぞれ
