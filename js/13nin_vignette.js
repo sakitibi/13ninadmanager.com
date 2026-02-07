@@ -122,12 +122,6 @@ function pickAdHooks(IsTrainBuildersHooks){
       localStorage.setItem("isAdPlayingTBA", false);
     }
     isAdPlaying = false;
-    if (IsTrainBuilders){
-      if(gPhase === 8){
-           message1.innerHTML = "";
-           respawn();
-      }
-    }
   }
 
   function playAdVideo() {
