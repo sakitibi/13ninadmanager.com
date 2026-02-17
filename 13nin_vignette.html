@@ -8,17 +8,29 @@
     <meta name="google-site-verification" content="9ixNnFdyt0L5GyekZS6NMUTbS-6wGqSWMedNQcKndL8">
   </head>
   <body>
+    <pre id="api-status">
+      API STATUS 
+    </pre>
     <script>
         let selects = [];
         const url = new URL(window.location.href);
         let videoFlag = false;
+        let tried = 0;
+        const src = url.searchParams.get("src");
         async function fetched(){
+          tried++;
           try{
             const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
             const data = await res.json();
             selects = data.src;
           }catch(e){
             console.error("fetchエラー: ", e);
+          } finally{
+            if(selects.length){
+              document.getElementById("api-status").innerText = "API STATUS 200 OK";
+            } else (tried > 50){
+              document.getElementById("api-status").innerText = `API STATUS 400 BAD REQUEST ${src}`;
+            }
           }
         }
         function adGenerate(){
@@ -28,7 +40,7 @@
           document.head.appendChild(stylesheet);
           const iframe = document.createElement("iframe");
           iframe.id = "adVideo";
-          iframe.src = `https://youtube.com/embed/${url.searchParams.get("src")}?autoplay=1&controls=0&muted=1`;
+          iframe.src = `https://youtube.com/embed/${src}?autoplay=1&controls=0&muted=1`;
           iframe.allow = "autoplay";
           document.body.appendChild(iframe);
         }
@@ -45,7 +57,7 @@
         }
         function selectsArrayGetItem(){
           for(let i = 0; i < selects.length; i++){
-            if(selects[i] === url.searchParams.get("src")){
+            if(selects[i] === src){
               videoFlag = true;
               i = selects.length;
             }
