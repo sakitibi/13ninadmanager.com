@@ -35,7 +35,7 @@ function pickAdHooks(IsTrainBuildersHooks){
   await fetched();
   const site_baseurl = "https://13ninadmanagerclick.vercel.app/ck/";
   const selects = [
-    { src: srcs[0], pat1: 571, publisher: 'メテヲs7のゆっくり実況部屋', site: `${site_baseurl}9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu` }, // メテヲ
+    { src: srcs[0], pat1: 485, publisher: 'メテヲs7のゆっくり実況部屋', site: `${site_baseurl}9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu` }, // メテヲ
     { src: srcs[1], pat1: 846, publisher: 'Latte', site: `${site_baseurl}QxmTxWxnD4zsAHrRTDLW4ObxvHec4diHfmoCDhYhkWAW5XgFacyKtUAkfigfUTE48dceqhY2yBmCCgWZOdvfl_GWjAPUEoFMShziSNGH-U2swvis6crubVcdIMs-Q72cgcSs_S3av6rCC3UIsXyMKsYe1qqEHez4trJ` }, // Latte
     { src: srcs[2], pat1: 997, publisher: 'ヒナの隠れ家', site: `${site_baseurl}IwV62n9DIUgcOfQSYSPBSWPsnSAypR-NJG6LVjSzRImGzvrKjyVEqoM7hC7Gil-O7QJ_3bj7WnpOKQEvkcyu7Nxtl4tgT8GdrVl5cdamSzhmEufQKkpDr4YwIzDZ79I54aW42c_kQZsQZvmCCw165t4SUmMFh0bP7uePJlyCaXBB3mtHuMyroZk9` }, // ひなにい
     { src: srcs[3], pat1: 929, publisher: 'めめんともり', site: `${site_baseurl}TKQVLhl2WhWwQ82S6OqY3-vXny3k3cs-ORby3iXuGvRjwtU6L8kVnCrFv2QHgoop-KxTovTdn6d_QRjqZFWAI7WsHmLLOTkVhY2tAujmyUouoBcNUOzwfj` }, // めめんともり
