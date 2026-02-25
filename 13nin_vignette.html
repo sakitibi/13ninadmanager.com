@@ -28,7 +28,7 @@
           } finally{
             if(selects.length){
               document.getElementById("api-status").innerText = "API STATUS 200 OK";
-            } else (tried > 50){
+            } else if (tried > 50){
               document.getElementById("api-status").innerText = `API STATUS 400 BAD REQUEST ${src}`;
             }
           }
