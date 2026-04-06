@@ -51,7 +51,7 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: srcs[13], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars6
     { src: srcs[14], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars6別バージョン
     { src: srcs[15], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars7
-    { src: srcs[16], pat1: 1037, publisher: 'あかさかの箱', site: `${site_baseurl}CcRpgdMOX_yg1YHmtNaeR8unSC4ob_apwt64QDEP2EaWP3MNp5G4P4ZP5qF1ZGHSUpkck5GjxOf78KcZExWdowtCnIHj3XvcKYC17SKwCN9MkuKj660oQMomuvNtJB8iOF8_H400vG_ixVlEW94gN3bnH6XH0BX1zuzUB4ytgxiafpwb_x` }, // あかさかの箱
+    { src: srcs[16], pat1: 984, publisher: 'あかさかの箱', site: `${site_baseurl}CcRpgdMOX_yg1YHmtNaeR8unSC4ob_apwt64QDEP2EaWP3MNp5G4P4ZP5qF1ZGHSUpkck5GjxOf78KcZExWdowtCnIHj3XvcKYC17SKwCN9MkuKj660oQMomuvNtJB8iOF8_H400vG_ixVlEW94gN3bnH6XH0BX1zuzUB4ytgxiafpwb_x` }, // あかさかの箱
   ];
 
   function shouldShowAd() {
