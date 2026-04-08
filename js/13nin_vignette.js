@@ -45,13 +45,13 @@ function pickAdHooks(IsTrainBuildersHooks){
     { src: srcs[7], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars2
     { src: srcs[8], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars3
     { src: srcs[9], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars4
-    { src: srcs[10], pat1: 695, publisher: 'ゆっくりウパパロン', site: `${site_baseurl}Flhv9cz5_Nl143zsAcuVhkyv1NicSoU4tv9bfMQJdbVkogsEzROVkvZY0na8rZg0-klWelCsgeXC2VWJDW9MO5dIsTp4jD6ZSbw2hTpG7RD_UhOegX2zzXfxFGvDvcF3Ed0Otsg7Tf-` }, // ゆっくりウパパロン
+    { src: srcs[10], pat1: 603, publisher: 'ゆっくりウパパロン', site: `${site_baseurl}Flhv9cz5_Nl143zsAcuVhkyv1NicSoU4tv9bfMQJdbVkogsEzROVkvZY0na8rZg0-klWelCsgeXC2VWJDW9MO5dIsTp4jD6ZSbw2hTpG7RD_UhOegX2zzXfxFGvDvcF3Ed0Otsg7Tf-` }, // ゆっくりウパパロン
     { src: srcs[11], pat1: 552, publisher: '茶子 / ゆっくり実況', site: `${site_baseurl}DFtDSz_Gd9ln2mtRBn3jGzy8gk8ofJpOEsD5zUEV87csq3epjwwziPdP6Lf6vbjzeBOLC61WPfqPMI4NMg56-MT-nLYX9RkPfBTkf3XYxeW56l3krEwjgmI` }, // 茶子 / ゆっくり実況
     { src: srcs[12], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars5
     { src: srcs[13], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars6
     { src: srcs[14], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars6別バージョン
     { src: srcs[15], pat1: 18, publisher: 'WECARS ウィーカーズ', site: `${site_baseurl}6GLxlfFs2rUuT3zTquIAsZIGprPCrAwxtErbj5acWVTB3_-Z-07lsYt9Kx4_5fJaMp5o4Fe2FkyP7dUfWnAgyiAhhY44rCl6FDAJEXfy20Wj4Ce0YfpIT8jz5f5zuTIkWEsU6AU0ka` }, // Wecars7
-    { src: srcs[16], pat1: 984, publisher: 'あかさかの箱', site: `${site_baseurl}CcRpgdMOX_yg1YHmtNaeR8unSC4ob_apwt64QDEP2EaWP3MNp5G4P4ZP5qF1ZGHSUpkck5GjxOf78KcZExWdowtCnIHj3XvcKYC17SKwCN9MkuKj660oQMomuvNtJB8iOF8_H400vG_ixVlEW94gN3bnH6XH0BX1zuzUB4ytgxiafpwb_x` }, // あかさかの箱
+    { src: srcs[16], pat1: 1060, publisher: 'あかさかの箱', site: `${site_baseurl}CcRpgdMOX_yg1YHmtNaeR8unSC4ob_apwt64QDEP2EaWP3MNp5G4P4ZP5qF1ZGHSUpkck5GjxOf78KcZExWdowtCnIHj3XvcKYC17SKwCN9MkuKj660oQMomuvNtJB8iOF8_H400vG_ixVlEW94gN3bnH6XH0BX1zuzUB4ytgxiafpwb_x` }, // あかさかの箱
   ];
 
   function shouldShowAd() {
