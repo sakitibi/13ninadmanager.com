@@ -3,7 +3,13 @@ project(VignetteEngine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ad_engine src/main.cpp src/ad_engine.cpp src/dom_utils.cpp)
+add_executable(
+    ad_engine
+    src/main.cpp
+    src/ad_engine.cpp
+    src/dom_utils.cpp
+    src/ad_data.cpp
+)
 
 # Emscripten特有の設定
 target_link_options(ad_engine PUBLIC
