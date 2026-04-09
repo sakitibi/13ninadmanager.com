@@ -61,6 +61,7 @@ void AdEngine::setMetadata(val srcs, val times) {
 }
 
 void AdEngine::updateInterval() {
+    // 1. 再生フラグが折れていれば何もしない
     if (!isAdPlaying) return;
 
     val document = val::global("document");
@@ -79,24 +80,25 @@ void AdEngine::updateInterval() {
         }
     }
 
+    // 要素が全く消えていないなら正常なので終了
+    if (missingCount == 0) return;
+
     // --- 判定ロジック ---
     
-    // 1. 全ての要素が消えている場合
-    // これは skipButtonClick によって意図的に消された可能性が高いので、
-    // 復活（recover）はさせず、監視フラグを下ろして終了する。
-    if (missingCount == targetIds.size() && !isAdPlaying) {
-        js_log("All elements cleared. Stopping monitor.");
-        isAdPlaying = false;
+    // 2. 全ての要素が消えている場合
+    // skipButtonClick によって意図的に消されたと判断する。
+    // フラグを折って、これ以上の監視（再描画）を止める。
+    if (missingCount == (int)targetIds.size()) {
+        js_log("All elements cleared. Monitoring stopped.");
+        isAdPlaying = false; 
         return;
     }
 
-    // 2. 一部の要素だけが消えている場合 (1つ以上、全部未満)
-    // これは広告ブロックやユーザーによる手動削除（妨害）とみなして復元する。
-    if (missingCount > 0) {
-        js_log("Partial element loss detected! Recovering ad...");
-        isAdPlaying = false; 
-        playAdVideo();
-    }
+    // 3. 一部の要素だけが消えている場合 (1つ以上、4つ未満)
+    // アドブロック等による部分的な削除とみなし、再描画を行う。
+    js_log("Partial element loss detected! Recovering ad...");
+    isAdPlaying = false; 
+    playAdVideo();
 }
 
 bool AdEngine::shouldShowAd() {
