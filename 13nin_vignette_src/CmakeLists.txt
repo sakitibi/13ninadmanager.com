@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+project(VignetteEngine)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# Emscripten特有の設定
+set(EMSCRIPTEN_LINK_FLAGS "-lembind -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_RUNTIME_METHODS=['ccall','cwrap']")
+
+add_executable(ad_engine src/main.cpp src/ad_engine.cpp src/dom_utils.cpp)
+set_target_properties(ad_engine PROPERTIES LINK_FLAGS "${EMSCRIPTEN_LINK_FLAGS}")
