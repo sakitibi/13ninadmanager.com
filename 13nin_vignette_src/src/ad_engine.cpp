@@ -53,6 +53,38 @@ void AdEngine::setMetadata(val srcs, val times) {
     }
 }
 
+void AdEngine::updateInterval() {
+    // 広告再生中のみ監視を行う
+    if (!isAdPlaying) return;
+
+    val document = val::global("document");
+
+    // 監視対象の要素 ID リスト
+    std::vector<std::string> targetIds = {
+        "adVideoFrame",
+        "skipAdButton",
+        "sponsor-container",
+        "details-container"
+    };
+
+    bool needRecover = false;
+    for (const auto& id : targetIds) {
+        val el = document.call<val>("getElementById", val(id));
+        if (el.isNull()) {
+            // 要素が一つでも消えていたら復元フラグを立てる
+            needRecover = true;
+            break;
+        }
+    }
+
+    // 要素が消えていた場合は、再度広告描画処理を走らせる
+    if (needRecover) {
+        // 二重実行防止のため一旦フラグを下げてから再実行
+        isAdPlaying = false; 
+        playAdVideo();
+    }
+}
+
 bool AdEngine::shouldShowAd() {
     val window = val::global("window");
     val localStorage = window["localStorage"];
