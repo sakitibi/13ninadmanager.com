@@ -4,42 +4,22 @@
     let engine = null;
     const JSON_URL = "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json";
 
-    // 1. Wasmモジュールの初期化
-    // 404エラー対策：locateFile を定義してURLの二重結合を防止
     const moduleArg = {
         locateFile: function(path, prefix) {
-            // パスが既に絶対URL(http...)ならそのまま返す
-            if (path.startsWith("http")) {
-                return path;
-            }
+            if (path.startsWith("http")) return path;
             return prefix + path;
         }
     };
 
     try {
-        // 13nin_vignette_v2_main.js の定義に合わせて呼び出し
-        // ※もしエラーが出る場合はビルド時の設定名に合わせて 13nin_vignette_v2_main() 等に変更してください
+        // 1. Wasmモジュールのロード
         const Module = await createVignetteModule(moduleArg);
+
+        // 2. C++ から呼ばれるグローバル関数の定義 (Engine 作成前に行うのが安全)
         
-        // C++ の AdEngine クラスをインスタンス化
-        engine = new Module.AdEngine();
-
-        // 2. メタデータの取得と C++ への転送
-        const res = await fetch(JSON_URL);
-        const data = await res.json();
-        engine.setMetadata(data.src, data.times);
-        console.log("Wasm Metadata initialized.");
-
-        // 詳細ボタンのコールバック設定
-        Module.onDetailsClick = function() {
-            const adData = engine.getCurrentAdData();
-            window.open(adData.site, "_blank");
-        };
-
-        // --- 以下、定期実行・イベントロジック ---
-
-        // スキップボタンのカウントダウン
+        // スキップタイマー
         window.startWasmTimer = function() {
+            if (!engine) return;
             const adData = engine.getCurrentAdData();
             let counter = adData.skipCount;
             const btn = document.getElementById("skipAdButton");
@@ -53,22 +33,44 @@
                     clearInterval(timer);
                     btn.disabled = false;
                     btn.textContent = "スキップ";
+                    // クリック時に C++ 側のフラグを下ろして要素を消す
                     btn.onclick = () => engine.skipButtonClick();
                 }
             }, 1000);
         };
 
-        // 初期広告チェック
+        // 詳細ボタン（Module経由）
+        Module.onDetailsClick = function() {
+            if (!engine) return;
+            const adData = engine.getCurrentAdData();
+            window.open(adData.site, "_blank");
+        };
+
+        // 3. Engine インスタンス化
+        engine = new Module.AdEngine();
+
+        // 4. メタデータの取得と転送
+        const res = await fetch(JSON_URL);
+        const data = await res.json();
+        engine.setMetadata(data.src, data.times);
+        console.log("Wasm Metadata initialized.");
+
+        // 5. 初期広告チェック
         engine.pickAd();
         if (engine.shouldShowAd()) {
-            const data = engine.getCurrentAdData();
-            if (data.adFlag) {
+            const currentData = engine.getCurrentAdData();
+            if (currentData.adFlag) {
                 const url = new URL(location.href);
                 url.searchParams.set("ad", "google_vignette");
                 history.replaceState({}, '', url);
+                
+                // ここで playAdVideo が走っても、既に startWasmTimer が定義されているので
+                // TypeError は発生しません。
                 engine.playAdVideo();
             }
         }
+
+        // --- タイマー処理 ---
 
         // 150秒ごとの広告チェック
         setInterval(() => {
@@ -78,7 +80,7 @@
             }
         }, 150000);
 
-        // 50ms ごとの監視
+        // 50ms ごとの Wasm 監視 (不正削除対策)
         setInterval(() => {
             if (engine) engine.updateInterval(); 
         }, 50);
