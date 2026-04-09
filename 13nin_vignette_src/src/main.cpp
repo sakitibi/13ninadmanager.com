@@ -11,5 +11,6 @@ EMSCRIPTEN_BINDINGS(ad_module) {
         .function("pickAd", &AdEngine::pickAd)
         .function("playAdVideo", &AdEngine::playAdVideo)
         .function("updateInterval", &AdEngine::updateInterval)
+        .function("skipButtonClick", &AdEngine::skipButtonClick)
         .function("getCurrentAdData", &AdEngine::getCurrentAdData);
 }
