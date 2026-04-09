@@ -4,16 +4,23 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <iostream> // std::cout用（任意）
 
 using namespace emscripten;
 
-AdEngine::AdEngine() : isAdPlaying(false) {}
+// ヘルパー：JSのconsole.logを呼ぶ
+void js_log(const std::string& msg) {
+    val::global("console").call<void>("log", val("[Wasm Engine] " + msg));
+}
+
+AdEngine::AdEngine() : isAdPlaying(false) {
+    js_log("Engine Instance Created");
+}
 
 void AdEngine::setMetadata(val srcs, val times) {
     selects.clear();
     const std::string site_baseurl = "https://13ninadmanagerclick.vercel.app/ck/";
     
-    // 元のUserScriptに基づいたパブリッシャーと遷移先キーの完全なリスト
     struct Meta { std::string pub; std::string key; };
     std::vector<Meta> metaList = {
         {"メテヲs7のゆっくり実況部屋", "9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu"},
@@ -35,12 +42,11 @@ void AdEngine::setMetadata(val srcs, val times) {
         {"あかさかの箱", "CcRpgdMOX_yg1YHmtNaeR8unSC4ob_apwt64QDEP2EaWP3MNp5G4P4ZP5qF1ZGHSUpkck5GjxOf78KcZExWdowtCnIHj3XvcKYC17SKwCN9MkuKj660oQMomuvNtJB8iOF8_H400vG_ixVlEW94gN3bnH6XH0BX1zuzUB4ytgxiafpwb_x"}
     };
 
-    // JSONから渡されたsrcs配列の長さ分ループ
     size_t len = srcs["length"].as<size_t>();
     for (size_t i = 0; i < len; ++i) {
         AdChoice ad;
-        ad.src = srcs[i].as<std::string>(); // JSONのsrcデータ
-        ad.pat1 = times[i].as<int>();       // JSONのtimesデータ
+        ad.src = srcs[i].as<std::string>();
+        ad.pat1 = times[i].as<int>();
         
         if (i < metaList.size()) {
             ad.publisher = metaList[i].pub;
@@ -51,15 +57,13 @@ void AdEngine::setMetadata(val srcs, val times) {
         }
         selects.push_back(ad);
     }
+    js_log("Metadata Initialized. Loaded: " + std::to_string(selects.size()) + " items.");
 }
 
 void AdEngine::updateInterval() {
-    // 広告再生中のみ監視を行う
     if (!isAdPlaying) return;
 
     val document = val::global("document");
-
-    // 監視対象の要素 ID リスト
     std::vector<std::string> targetIds = {
         "adVideoFrame",
         "skipAdButton",
@@ -71,15 +75,13 @@ void AdEngine::updateInterval() {
     for (const auto& id : targetIds) {
         val el = document.call<val>("getElementById", val(id));
         if (el.isNull()) {
-            // 要素が一つでも消えていたら復元フラグを立てる
+            js_log("Element [" + id + "] is missing! Preparing recovery...");
             needRecover = true;
             break;
         }
     }
 
-    // 要素が消えていた場合は、再度広告描画処理を走らせる
     if (needRecover) {
-        // 二重実行防止のため一旦フラグを下げてから再実行
         isAdPlaying = false; 
         playAdVideo();
     }
@@ -94,14 +96,18 @@ bool AdEngine::shouldShowAd() {
     long long now = window["Date"].call<val>("now").as<long long>();
     
     std::string origin = window["location"]["origin"].as<std::string>();
-    // 元のロジック: 特定ドメインは30分、それ以外は15分
     long long threshold = (origin == "https://sakitibi.github.io" || origin == "https://asakura-wiki.vercel.app") ? 1800000 : 900000;
     
-    return (now - last) > threshold;
+    bool result = (now - last) > threshold;
+    if (result) js_log("Threshold exceeded. Ready to show ad.");
+    return result;
 }
 
 void AdEngine::pickAd() {
-    if (selects.empty()) return;
+    if (selects.empty()) {
+        js_log("Error: selects list is empty. Cannot pick ad.");
+        return;
+    }
 
     double rnd = val::global("Math").call<double>("random");
     int idx = static_cast<int>(rnd * selects.size());
@@ -113,57 +119,54 @@ void AdEngine::pickAd() {
     currentAdData.set("skipCount", rndPattern ? choice.pat1 : 6);
     currentAdData.set("publisher", val(choice.publisher));
     currentAdData.set("site", val(choice.site));
-    // 1/11の確率でフラグを立てる
+    
     bool adFlag = (static_cast<int>(val::global("Math").call<double>("random") * 11) == 10);
     currentAdData.set("adFlag", adFlag);
+
+    js_log("Ad Picked: " + choice.publisher + (adFlag ? " [FLAGGED]" : " [NOT FLAGGED]"));
 }
 
 void AdEngine::playAdVideo() {
     if (isAdPlaying) return;
     isAdPlaying = true;
+    
+    js_log("Starting Ad Playback: " + currentAdData["publisher"].as<std::string>());
 
-    // 1. スタイル適用
     dom::injectStyle("https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css");
 
-    // 2. Iframe (動画)
     val iframe = dom::createElement("iframe", "adVideoFrame");
     std::string fullSrc = currentAdData["src"].as<std::string>();
-    // URLからID部分のみ抽出してパラメータ付与
     std::string ytId = fullSrc.substr(fullSrc.find_last_of('/') + 1);
     iframe.set("src", val("https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=" + ytId));
 
-    // 3. スポンサー表示
     val sponsor = dom::createElement("div", "sponsor-container");
     val sponsorRow = dom::createElement("p", "sponsor-row", sponsor);
     val sponsorInline = dom::createElement("span", "sponsor-inline", sponsorRow);
     dom::setText(sponsorInline, "スポンサー: " + currentAdData["publisher"].as<std::string>());
 
-    // 4. 詳細ボタン
     val detailsContainer = dom::createElement("div", "details-container");
     val detailsBtn = dom::createElement("button", "detailsButton", detailsContainer);
     val detailsSpan = dom::createElement("span", "detailsButtonInline", detailsBtn);
     dom::setText(detailsSpan, "詳細");
     
-    // 詳細クリックイベント (JS側に委譲または直接記述)
     detailsBtn.set("onclick", val::module_property("onDetailsClick"));
 
-    // 5. スキップボタン
     val skipBtn = dom::createElement("button", "skipAdButton");
     skipBtn.set("disabled", true);
     
-    // カウントダウン開始
     val::global().call<void>("startWasmTimer");
-
-    // 6. 復元ガード（MutationObserver）をJS側で開始させる
     val::global().call<void>("initMutationGuard");
 }
 
 void AdEngine::skipButtonClick() {
+    js_log("Skip button clicked. Cleaning up.");
     isAdPlaying = false;
     dom::removeElement("adVideoFrame");
     dom::removeElement("skipAdButton");
     dom::removeElement("sponsor-container");
     dom::removeElement("details-container");
     
-    val::global("localStorage").call<void>("setItem", val("lastAdShown"), val::global("Date").call<val>("now"));
+    long long now = val::global("Date").call<val>("now").as<long long>();
+    val::global("localStorage").call<void>("setItem", val("lastAdShown"), val(std::to_string(now)));
+    js_log("Timestamp updated in localStorage.");
 }
