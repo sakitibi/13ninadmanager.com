@@ -23,6 +23,7 @@ function pickAdHooks(IsTrainBuildersHooks){
 }
 (async function(){
   'use strict';
+  console.warn("この13nin_vignette.jsは古いです、\n最新のWebAssembly版に移行して下さい。");
   let adData = {};
   let observer;
   const url = new URL(location.href);
