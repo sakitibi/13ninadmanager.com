@@ -58,20 +58,6 @@
             }, 1000);
         };
 
-        // 復元ガード
-        window.initMutationGuard = function() {
-            const observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    mutation.removedNodes.forEach(node => {
-                        if (node.id === "adVideoFrame" || node.id === "skipAdButton") {
-                            engine.playAdVideo();
-                        }
-                    });
-                });
-            });
-            observer.observe(document.body, { childList: true, subtree: true });
-        };
-
         // 初期広告チェック
         engine.pickAd();
         if (engine.shouldShowAd()) {
