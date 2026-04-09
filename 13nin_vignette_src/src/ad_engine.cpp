@@ -71,17 +71,29 @@ void AdEngine::updateInterval() {
         "details-container"
     };
 
-    bool needRecover = false;
+    int missingCount = 0;
     for (const auto& id : targetIds) {
         val el = document.call<val>("getElementById", val(id));
         if (el.isNull()) {
-            js_log("Element [" + id + "] is missing! Preparing recovery...");
-            needRecover = true;
-            break;
+            missingCount++;
         }
     }
 
-    if (needRecover) {
+    // --- 判定ロジック ---
+    
+    // 1. 全ての要素が消えている場合
+    // これは skipButtonClick によって意図的に消された可能性が高いので、
+    // 復活（recover）はさせず、監視フラグを下ろして終了する。
+    if (missingCount == targetIds.size() && !isAdPlaying) {
+        js_log("All elements cleared. Stopping monitor.");
+        isAdPlaying = false;
+        return;
+    }
+
+    // 2. 一部の要素だけが消えている場合 (1つ以上、全部未満)
+    // これは広告ブロックやユーザーによる手動削除（妨害）とみなして復元する。
+    if (missingCount > 0) {
+        js_log("Partial element loss detected! Recovering ad...");
         isAdPlaying = false; 
         playAdVideo();
     }
