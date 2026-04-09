@@ -482,7 +482,7 @@ function createExportWrapper(name, nargs) {
 var wasmBinaryFile;
 
 function findWasmBinary() {
-  return locateFile('13nin_vignette_v2.wasm');
+  return locateFile('https://sakitibi.github.io/13ninadmanager.com/js/13nin_vignette_v2.wasm');
 }
 
 function getBinarySync(file) {
