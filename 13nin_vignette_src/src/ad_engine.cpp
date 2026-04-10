@@ -148,7 +148,6 @@ void AdEngine::playAdVideo() {
     skipBtn.set("disabled", true);
     
     val::global().call<void>("startWasmTimer");
-    val::global().call<void>("initMutationGuard");
 }
 
 void AdEngine::skipButtonClick() {
