@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         13nin_vignette＋復元ガード (完全版＋30分ブロック)
+// @name         13nin_vignette＋復元ガード (完全版＋30分ブロック,legacy)
 // @version      2.0.90
 // @description  動的広告表示＋要素復元ガード＋スキップ後30分非表示
 // @match        *://*/*
 // @grant        none
+// @deprecated
 // @license      13ninstudio
 // ==/UserScript==
 let adHookings = false;
