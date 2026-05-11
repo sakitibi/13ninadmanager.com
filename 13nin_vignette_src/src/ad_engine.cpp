@@ -89,7 +89,7 @@ bool AdEngine::shouldShowAd() {
     long long now = window["Date"].call<val>("now").as<long long>();
     
     std::string origin = window["location"]["origin"].as<std::string>();
-    long long threshold = (origin == "https://sakitibi.github.io" || origin == "https://asakura-wiki.vercel.app") ? 1800000 : 900000;
+    long long threshold = (origin == "https://sakitibi.github.io" || origin == "https://asakura-wiki.vercel.app") ? 1500000 : 400000;
     
     bool result = (now - last) > threshold;
     if (result) js_log("Threshold exceeded. Ready to show ad.");
@@ -135,12 +135,12 @@ void AdEngine::playAdVideo() {
     val sponsor = dom::createElement("div", "sponsor-container");
     val sponsorRow = dom::createElement("p", "sponsor-row", sponsor);
     val sponsorInline = dom::createElement("span", "sponsor-inline", sponsorRow);
-    dom::setText(sponsorInline, "スポンサー: " + currentAdData["publisher"].as<std::string>());
+    dom::setText(sponsorInline, "スポンサー提供: " + currentAdData["publisher"].as<std::string>());
 
     val detailsContainer = dom::createElement("div", "details-container");
     val detailsBtn = dom::createElement("button", "detailsButton", detailsContainer);
     val detailsSpan = dom::createElement("span", "detailsButtonInline", detailsBtn);
-    dom::setText(detailsSpan, "詳細");
+    dom::setText(detailsSpan, "詳細を開く");
     
     detailsBtn.set("onclick", val::module_property("onDetailsClick"));
 
