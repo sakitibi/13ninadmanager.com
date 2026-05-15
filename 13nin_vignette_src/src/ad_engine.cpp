@@ -133,15 +133,15 @@ void AdEngine::playAdVideo() {
     std::string ytId = fullSrc.substr(fullSrc.find_last_of('/') + 1);
     iframe.set("src", val("https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=" + ytId));
 
-    val sponsor = dom::createElement("div", "sponsor-container");
-    val sponsorRow = dom::createElement("p", "sponsor-row", sponsor);
-    val sponsorInline = dom::createElement("span", "sponsor-inline", sponsorRow);
-    dom::setText(sponsorInline, "スポンサー提供: " + currentAdData["publisher"].as<std::string>());
-
     val detailsContainer = dom::createElement("div", "details-container");
     val detailsBtn = dom::createElement("button", "detailsButton", detailsContainer);
     val detailsSpan = dom::createElement("span", "detailsButtonInline", detailsBtn);
     dom::setText(detailsSpan, "詳細を開く");
+
+    val sponsor = dom::createElement("div", "sponsor-container");
+    val sponsorRow = dom::createElement("p", "sponsor-row", sponsor);
+    val sponsorInline = dom::createElement("span", "sponsor-inline", sponsorRow);
+    dom::setText(sponsorInline, "スポンサー提供: " + currentAdData["publisher"].as<std::string>());
     
     detailsBtn.set("onclick", val::module_property("onDetailsClick"));
 
