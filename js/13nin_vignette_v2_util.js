@@ -24,15 +24,15 @@
             let counter = adData.skipCount;
             const btn = document.getElementById("skipAdButton");
             if (!btn) return;
-
+            const inline = document.getElementById("skipAdButtonInline");
             const timer = setInterval(() => {
                 if (counter >= 0) {
-                    btn.textContent = `スキップ あと${counter}秒`;
+                    inline.textContent = `スキップ あと${counter}秒`;
                     counter--;
                 } else {
                     clearInterval(timer);
                     btn.disabled = false;
-                    btn.textContent = "スキップ";
+                    inline.textContent = "スキップ";
                     // クリック時に C++ 側のフラグを下ろして要素を消す
                     btn.onclick = () => engine.skipButtonClick();
                 }

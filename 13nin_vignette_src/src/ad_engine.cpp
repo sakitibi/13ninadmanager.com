@@ -47,6 +47,7 @@ void AdEngine::updateInterval() {
     std::vector<std::string> targetIds = {
         "adVideoFrame",
         "skipAdButton",
+        "skipAdButtonInline"
         "sponsor-container",
         "details-container"
     };
@@ -145,6 +146,7 @@ void AdEngine::playAdVideo() {
     detailsBtn.set("onclick", val::module_property("onDetailsClick"));
 
     val skipBtn = dom::createElement("button", "skipAdButton");
+    val skipBtnInline = dom::createElement("span", "skipAdButtonInline");
     skipBtn.set("disabled", true);
     
     val::global().call<void>("startWasmTimer");
