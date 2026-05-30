@@ -114,7 +114,7 @@ void AdEngine::pickAd() {
     currentAdData.set("publisher", val(choice.publisher));
     currentAdData.set("site", val(choice.site));
     
-    bool adFlag = (static_cast<int>(val::global("Math").call<double>("random") * 11) == 10);
+    bool adFlag = (static_cast<int>(val::global("Math").call<double>("random") * 1) == 0);
     currentAdData.set("adFlag", adFlag);
 
     js_log("Ad Picked: " + choice.publisher + (adFlag ? " [FLAGGED]" : " [NOT FLAGGED]"));
