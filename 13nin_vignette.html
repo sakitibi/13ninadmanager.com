@@ -1,75 +1,99 @@
 <!doctype html>
 <html class="" oncontextmenu="return false">
-  <head>
-    <title>13nin_vignette</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="9ixNnFdyt0L5GyekZS6NMUTbS-6wGqSWMedNQcKndL8">
-  </head>
-  <body>
-    <pre id="api-status">
-      API STATUS 
-    </pre>
-    <script>
-        let selects = [];
-        const url = new URL(window.location.href);
-        let videoFlag = false;
-        let tried = 0;
-        const src = url.searchParams.get("src");
-        async function fetched(){
-          tried++;
-          try{
-            const res = await fetch("https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json");
-            const data = await res.json();
-            selects = data.src;
-          }catch(e){
-            console.error("fetchエラー: ", e);
-          } finally{
-            if(selects.length){
-              document.getElementById("api-status").innerText = "API STATUS 200 OK";
-            } else if (tried > 50){
-              document.getElementById("api-status").innerText = `API STATUS 400 BAD REQUEST ${src}`;
-            }
-          }
-        }
-        function adGenerate(){
-          const stylesheet = document.createElement("link");
-          stylesheet.rel = "stylesheet";
-          stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
-          document.head.appendChild(stylesheet);
-          const iframe = document.createElement("iframe");
-          iframe.id = "adVideo";
-          iframe.src = `https://youtube.com/embed/${src}?autoplay=1&controls=0&muted=1`;
-          iframe.allow = "autoplay";
-          document.body.appendChild(iframe);
-        }
-        function isVideoFlag(){
-          if(videoFlag){
-            adGenerate();
-          } else {
-            console.warn("videoFlagがfalseです!");
-            selectsArrayGetItem();
-            setTimeout(() => {
-              isVideoFlag();
-            }, 100);
-          }
-        }
-        function selectsArrayGetItem(){
-          for(let i = 0; i < selects.length; i++){
-            if(selects[i] === src){
-              videoFlag = true;
-              i = selects.length;
-            }
-          }
-        }
-        fetched();
-        setTimeout(() => {
-          selectsArrayGetItem();
-          setTimeout(() => {
-            isVideoFlag();
-          }, 100);
-        }, 100);
-    </script>
-  </body>
+    <head>
+        <title>13nin_vignette</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="9ixNnFdyt0L5GyekZS6NMUTbS-6wGqSWMedNQcKndL8">
+    </head>
+    <body>
+        <pre id="api-status">
+            API STATUS 
+        </pre>
+        <script>
+                const JSON_URL = [
+                    "https://13ninadmanagerclick.vercel.app/api/videoid",
+                    "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json"
+                ];
+                let selects = [];
+                const url = new URL(window.location.href);
+                let videoFlag = false;
+                let tried = 0;
+                const src = url.searchParams.get("src");
+                async function fetched(){
+                    tried++;
+                    try{
+                        const res1 = await fetch(JSON_URL[0], {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify([
+                                "UU4YwPX5-38lsN_rlzSgd5kw",
+                                "UUhDD-mCbqd4182eI-T5wGbA",
+                                "UUONw_JcpiuvPpClHQi3CHXw",
+                                "UUy0DH4rgPPjDWVZO7wibcSQ",
+                                "UUE4m8LkxKQc40Pr0YB4d-5w",
+                                "UU_AoeaCVUk5afzONHvqFRjQ",
+                                "UUbECstWnFqR9Y8MN_uN4HfA",
+                                "UUJy7zfLsKBXoo2soFMum7JQ"
+                            ])
+                        })
+                        const res2 = await fetch(JSON_URL[1])
+                        const data = await Promise.all([
+                            res1.json(),
+                            res2.json()
+                        ]);
+                        const srcArray = data[0].src.concat(data[1].src);
+                        selects = srcArray;
+                    } catch(e) {
+                        console.error("fetchエラー: ", e);
+                    } finally {
+                        if(selects.length){
+                            document.getElementById("api-status").innerText = "API STATUS 200 OK";
+                        } else if (tried > 50){
+                            document.getElementById("api-status").innerText = `API STATUS 400 BAD REQUEST ${src}`;
+                        }
+                    }
+                }
+                function adGenerate(){
+                    const stylesheet = document.createElement("link");
+                    stylesheet.rel = "stylesheet";
+                    stylesheet.href = "https://sakitibi.github.io/elibrary-api/css/86f9642a-eaf9-219b-037c-f5bd248a143d.min.css";
+                    document.head.appendChild(stylesheet);
+                    const iframe = document.createElement("iframe");
+                    iframe.id = "adVideo";
+                    iframe.src = `https://youtube.com/embed/${src}?autoplay=1&controls=0&muted=1`;
+                    iframe.allow = "autoplay";
+                    document.body.appendChild(iframe);
+                }
+                function isVideoFlag(){
+                    if(videoFlag){
+                        adGenerate();
+                    } else {
+                        console.warn("videoFlagがfalseです!");
+                        selectsArrayGetItem();
+                        setTimeout(() => {
+                            isVideoFlag();
+                        }, 100);
+                    }
+                }
+                function selectsArrayGetItem(){
+                    for(let i = 0; i < selects.length; i++){
+                        if(selects[i] === src){
+                            videoFlag = true;
+                            i = selects.length;
+                        }
+                    }
+                }
+                fetched();
+                setTimeout(() => {
+                    selectsArrayGetItem();
+                    setTimeout(() => {
+                        isVideoFlag();
+                    }, 100);
+                }, 100);
+        </script>
+    </body>
 </html>
