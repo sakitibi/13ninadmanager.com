@@ -70,10 +70,10 @@
             ])
         })
         const res2 = await fetch(JSON_URL[1])
-        const data = await Promise.all(
+        const data = await Promise.all[(
             res1.json(),
             res2.json()
-        );
+        )];
         const srcArray = data[0].src.concat(data[1].src);
         const timesArray = data[0].times.concat(data[1].times);
         engine.setMetadata(srcArray, timesArray);
