@@ -3,7 +3,7 @@
 
     let engine = null;
     const JSON_URL = [
-        "https://13ninadmanagerclick.vercel.app/api/videoid",
+        //"https://13ninadmanagerclick.vercel.app/api/videoid",
         "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json"
     ];
 
@@ -53,7 +53,7 @@
         engine = new Module.AdEngine();
 
         // 4. メタデータの取得と転送
-        const res1 = await fetch(JSON_URL[0], {
+        /*const res1 = await fetch(JSON_URL[0], {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -68,14 +68,14 @@
                 "UUbECstWnFqR9Y8MN_uN4HfA",
                 "UUJy7zfLsKBXoo2soFMum7JQ"
             ])
-        })
+        })*/
         const res2 = await fetch(JSON_URL[1])
         const data = await Promise.all([
-            res1.json(),
+            //res1.json(),
             res2.json()
         ]);
-        const srcArray = data[0].src.concat(data[1].src);
-        const timesArray = data[0].times.concat(data[1].times);
+        const srcArray = data[0].src/*.concat(data[1].src);*/
+        const timesArray = data[0].times/*.concat(data[1].times);*/
         engine.setMetadata(srcArray, timesArray);
         console.log("Wasm Metadata initialized.");
 
