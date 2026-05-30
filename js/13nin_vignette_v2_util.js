@@ -2,7 +2,10 @@
     'use strict';
 
     let engine = null;
-    const JSON_URL = "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json";
+    const JSON_URL = [
+        "https://13ninadmanagerclick.vercel.app/api/videoid",
+        "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json"
+    ];
 
     const moduleArg = {
         locateFile: function(path, prefix) {
@@ -50,9 +53,30 @@
         engine = new Module.AdEngine();
 
         // 4. メタデータの取得と転送
-        const res = await fetch(JSON_URL);
-        const data = await res.json();
-        engine.setMetadata(data.src, data.times);
+        const res1 = await fetch(JSON_URL[0], {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify([
+                "UU4YwPX5-38lsN_rlzSgd5kw",
+                "UUhDD-mCbqd4182eI-T5wGbA",
+                "UUONw_JcpiuvPpClHQi3CHXw",
+                "UUy0DH4rgPPjDWVZO7wibcSQ",
+                "UUE4m8LkxKQc40Pr0YB4d-5w",
+                "UU_AoeaCVUk5afzONHvqFRjQ",
+                "UUbECstWnFqR9Y8MN_uN4HfA",
+                "UUJy7zfLsKBXoo2soFMum7JQ"
+            ])
+        })
+        const res2 = await fetch(JSON_URL[1])
+        const data = await Promise.all(
+            res1.json(),
+            res2.json()
+        );
+        const srcArray = data[0].src.concat(data[1].src);
+        const timesArray = data[0].times.concat(data[1].times);
+        engine.setMetadata(srcArray, timesArray);
         console.log("Wasm Metadata initialized.");
 
         // 5. 初期広告チェック
