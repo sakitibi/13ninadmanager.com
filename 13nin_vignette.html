@@ -54,6 +54,7 @@
                             document.getElementById("api-status").innerText = "API STATUS 200 OK";
                         } else if (tried > 50){
                             document.getElementById("api-status").innerText = `API STATUS 400 BAD REQUEST ${src}`;
+                            return;
                         }
                     }
                 }
@@ -75,6 +76,7 @@
                         console.warn("videoFlagがfalseです!");
                         selectsArrayGetItem();
                         setTimeout(() => {
+                            if (tried > 50) return;
                             isVideoFlag();
                         }, 100);
                     }
