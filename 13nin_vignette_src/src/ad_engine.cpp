@@ -131,7 +131,7 @@ void AdEngine::playAdVideo() {
     val iframe = dom::createElement("iframe", "adVideoFrame");
     std::string fullSrc = currentAdData["src"].as<std::string>();
     std::string ytId = fullSrc.substr(fullSrc.find_last_of('/') + 1);
-    iframe.set("src", val("https://sakitibi.github.io/13ninadmanager.com/13nin_vignette?src=" + ytId));
+    iframe.set("src", val("https://sakitibi.github.io/13ninadmanager.com/14nin_vignette?src=" + ytId));
 
     val detailsContainer = dom::createElement("div", "details-container");
     val detailsBtn = dom::createElement("button", "detailsButton", detailsContainer);
