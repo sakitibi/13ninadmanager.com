@@ -4,7 +4,7 @@ const Criteo2 = "https://ads.as.criteo.com/delivery/r/rtb/appnexus/display.aspx?
 const SakitibiAdmanager = "https://sakitibi.github.io/13ninadmanager.com/";
 const urls = [
     `${SakitibiAdmanager}SuperNewRoles-Logo`,
-    `${SakitibiAdmanager}13ninad-1`,
+    `${SakitibiAdmanager}14ninad-1`,
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
