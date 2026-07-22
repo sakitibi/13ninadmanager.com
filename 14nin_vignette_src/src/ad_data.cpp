@@ -1,7 +1,7 @@
 #include "ad_data.hpp"
 
 // クラス外で初期化を行う
-const std::string AdData::SITE_BASEURL = "https://13ninadmanagerclick.vercel.app/ck/";
+const std::string AdData::SITE_BASEURL = "https://14ninadmanagerclick.vercel.app/ck/";
 
 const std::vector<Meta> AdData::AD_META_LIST = {
     {"メテヲs7のゆっくり実況部屋", "9SrU_djJLoOmVc4UX0k8CM7hElCgVGFZnM9cDDQ9byD5q5Isz-yKD1lO-FTYajEawD6o-LUCdDwGzqRzab4I7R1QHCJQA15srIODy2Qk22RQtDM1uWr5TyW3n-lfMgnjyN0zm-fnTvqdV1KH2jQJpGd4B9zQXu"},

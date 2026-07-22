@@ -3,7 +3,7 @@
 
     let engine = null;
     const JSON_URL = [
-        "https://13ninadmanagerclick.vercel.app/api/videoid",
+        "https://14ninadmanagerclick.vercel.app/api/videoid",
         "https://sakitibi.github.io/13ninadmanager.com/vignette_metadata.json"
     ];
 
